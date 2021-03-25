@@ -35,7 +35,7 @@ class SceneController extends AbstractController
         ]);
     }
 
-    public function new(Request $request, AlertRepository $alertRepository): Response
+    public function new(Request $request, PartnerRepository $partnerRepository,AlertRepository $alertRepository): Response
     {
         $scene = new Scene();
         $form = $this->createForm(SceneType::class, $scene);
@@ -52,6 +52,7 @@ class SceneController extends AbstractController
         return $this->render('scene/new.html.twig', [
             'scene' => $scene,
             'form' => $form->createView(),
+            'partners' => $partnerRepository->findAll(),
             'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
         ]);
     }
@@ -63,6 +64,19 @@ class SceneController extends AbstractController
         //$artists = $artist->findAll();
         $artists = $artistRepository;
         return $this->render('scene/show.html.twig', [
+            'scene' => $scene,
+            'artists' => $artists,
+            'partners' => $partnerRepository->findAll(),
+            'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
+        ]);
+    }
+
+    public function showeng(Scene $scene, PartnerRepository $partnerRepository, ArtistRepository $artistRepository, AlertRepository $alertRepository): Response
+    {
+        $partner = $partnerRepository->findAll();
+        //$artists = $artist->findAll();
+        $artists = $artistRepository;
+        return $this->render('scene/eng/show.html.twig', [
             'scene' => $scene,
             'artists' => $artists,
             'partners' => $partnerRepository->findAll(),

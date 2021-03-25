@@ -41,26 +41,15 @@ class HomeController extends AbstractController
         ]);
     }
 
-    public function index2(ArtistRepository $artistRepository, PartnerRepository $partnerRepository, SceneRepository $sceneRepository, AlertRepository $alertRepository): Response
-    {
-        return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
-            'partners' => $partnerRepository->findAll(),
-            'scenes' => $sceneRepository->findAll(),
-            'artists' => $artistRepository->findBy([],['name'=>'ASC']),
-            'show1' => $artistRepository->findBy(['date'=>'Vendredi', 'scene' => '1'],['hour'=>'ASC']),
-            'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
-        ]);
-    }
-
     public function indexeng(ArtistRepository $artistRepository, PartnerRepository $partnerRepository, SceneRepository $sceneRepository, AlertRepository $alertRepository): Response
     {
-        return $this->render('home/index.html.twig', [
+        return $this->render('home/eng/index.html.twig', [
             'controller_name' => 'HomeController',
             'partners' => $partnerRepository->findAll(),
             'scenes' => $sceneRepository->findAll(),
             'artists' => $artistRepository->findBy([],['name'=>'ASC']),
             'show1' => $artistRepository->findBy(['date'=>'Vendredi', 'scene' => '1'],['hour'=>'ASC']),
+            'alerts' => $alertRepository->findBy([],['id'=>'DESC']),
             'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
         ]);
     }

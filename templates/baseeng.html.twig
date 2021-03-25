@@ -2,22 +2,22 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Welcome!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{% block title %}{% endblock %}</title>
         <link  rel="stylesheet" href="/css/header.css">
         <link  rel="stylesheet" href="/css/home.css">
         <link  rel="stylesheet" href="/css/carousel/carousel.css">
-        <link  rel="stylesheet" href="/css/scene/scene.css">
+        <link  rel="stylesheet" href="/css/slider/slider.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
         <link rel="icon" type="image/png" href="/img/logos/head.jpg" />
     </head>
-<body>
+    <body>
     <div class="main">
     <div class="main2">
             <div id="alert" style="">
                 {% for alert in news %}
-                    <a href="{{ path('alert_show', {'titre': alert.titre}) }}"><p><i class="fas fa-exclamation-triangle"></i> {{ alert.titre }}
+                    <a href="{{ path('alert_showeng', {'titreeng': alert.titreeng}) }}"><p><i class="fas fa-exclamation-triangle"></i> {{ alert.titreeng }}
                     </p></a>
                 {% endfor %}
             </div>
@@ -28,35 +28,43 @@
 
         </div>
         <div>
-            <a href="{{ path('index') }}"><img src="/img/logos/nation_sounds.png"></a>
+            <a href="{{ path('indexeng') }}"><img src="/img/logos/nation_sounds.png"></a>
         </div>
                     <div class="language">
-        <p><a href="#">fr</a> / <a href="#">eng</a></p>
+        <p><a href="{{ path('index') }}">fr</a> / <a href="{{ path('indexeng') }}">eng</a></p>
         </div>
         </div>
         <div class="icon-flex">
         <input class="menu-btn" type="checkbox" id="menu-btn" />
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
         <ul class="menu">    
-            <li><a href="/artist" class="grilles">Programme</a></li>
-            <li><a href="{{ path('scene_index') }}" class="direct">Scènes</a></li>
-            <li><a href="{{ path('artist_index') }}" class="catalogues">Artistes</a></li>
+            <li><a href="{{ path('programme') }}" class="grilles">Programme</a></li>
+            <li><a href="{{ path('scene_index') }}" class="direct">Stages</a></li>
+            <li><a href="{{ path('artist_index') }}" class="catalogues">Musicians</a></li>
             <li><a href="{{ path('faq') }}" class="grilles">FAQ</a></li>
-            <li><a href="{{ path('a_propos') }}" class="direct">A propos</a></li>
-            <li><a href="{{ path('app_logout') }}">Se déconnecter</a></li>
+            <li><a href="{{ path('a_propos') }}" class="direct">About us</a></li>
+            <li><a href="{{ path('app_logout') }}">Logout</a></li>
         </ul>
         </div>
 
     </header>
+ <div class="container">
+        {% block stylesheets %}
+        {% endblock %}
+ </div>
 
-
-
+    </head>
+    <body>
         {% block body %}{% endblock %}
+
+
+
+
              <div id="maps-home">
                     <iframe src="https://www.google.com/maps/d/embed?mid=1Bjj62wd7HVXkdNwcgxg-Z7ZSE64LvjnP" width="640" height="480" style=""></iframe>
             </div>
             <div class="carousel-slider" id="responsive">
-                    <h1><img src="/img/icon/partenaires.png"/>Nos partenaires</h1>
+                    <h1><img src="/img/icon/partenaires.png"/>Our partners</h1>
                         <div class="carousel-content" data-grid='{"xl":3,"lg":3,"md":2,"sm":2}' data-pagination="true">
 
                             {% for partner in partners %}
@@ -70,7 +78,7 @@
                     <button class="carousel-next-btn">></button>
                         <div class="carousel-pagination"></div>
                         <div class="button-link-partners" onclick="location.href='/partner';">
-                                Voir nos partenaires
+                                Watch all partners
                         </div>  
             </div>
             <footer>
@@ -298,5 +306,5 @@ let carousel = (el, parameter) => {
 carousel();
 
 </script>    
-    </body>
+</body>
 </html>

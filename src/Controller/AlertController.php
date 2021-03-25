@@ -15,14 +15,12 @@ use App\Repository\SceneRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
-/**
- * @Route("/alert")
- */
+
+
+
 class AlertController extends AbstractController
 {
-    /**
-     * @Route("/", name="alert_index", methods={"GET"})
-     */
+
     public function index(AlertRepository $alertRepository, ArtistRepository $artistRepository, PartnerRepository $partnerRepository, SceneRepository $sceneRepository): Response
     {
         return $this->render('alert/index.html.twig', [
@@ -58,21 +56,26 @@ class AlertController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/{id}", name="alert_show", methods={"GET"})
-     */
-    public function show(Alert $alert, PartnerRepository $partnerRepository): Response
+
+    public function show(Alert $alert, PartnerRepository $partnerRepository, AlertRepository $alertRepository): Response
     {
         return $this->render('alert/show.html.twig', [
             'alert' => $alert,
             'partners' => $partnerRepository->findAll(),
-
+            'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
         ]);
     }
 
-    /**
-     * @Route("/{id}/edit", name="alert_edit", methods={"GET","POST"})
-     */
+    public function showeng(Alert $alert, PartnerRepository $partnerRepository, AlertRepository $alertRepository): Response
+    {
+        return $this->render('alert/eng/show.html.twig', [
+            'alert' => $alert,
+            'partners' => $partnerRepository->findAll(),
+            'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
+        ]);
+    }
+
+
     public function edit(Request $request, Alert $alert, PartnerRepository $partnerRepository): Response
     {
         $form = $this->createForm(AlertType::class, $alert);
@@ -92,9 +95,7 @@ class AlertController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/{id}", name="alert_delete", methods={"POST"})
-     */
+
     public function delete(Request $request, Alert $alert): Response
     {
         if ($this->isCsrfTokenValid('delete'.$alert->getId(), $request->request->get('_token'))) {

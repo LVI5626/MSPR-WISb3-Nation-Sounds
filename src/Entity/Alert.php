@@ -23,6 +23,11 @@ class Alert
     private $titre;
 
     /**
+     * @ORM\Column(type="string")
+     */
+    private $titreeng;
+
+    /**
      * @ORM\Column(type="text")
      */
     private $text;
@@ -57,6 +62,18 @@ class Alert
     public function setTitre(string $titre): self
     {
         $this->titre = $titre;
+
+        return $this;
+    }
+
+    public function getTitreeng(): ?string
+    {
+        return $this->titreeng;
+    }
+
+    public function setTitreeng(string $titreeng): self
+    {
+        $this->titreeng = $titreeng;
 
         return $this;
     }

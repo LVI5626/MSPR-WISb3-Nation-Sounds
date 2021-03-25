@@ -36,10 +36,18 @@
 
 
 
+
+
 #maps-home{
-    background-color: pink;
-    height: 150px;
+    margin: 10px;
+
 }
+
+#maps-home iframe{
+    border-radius: 10px;
+    width: 100%;
+}
+
 
 
 .principal_news_flex{

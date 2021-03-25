@@ -35,6 +35,7 @@ artist_index:
     path:     fr/artistes
     controller: App\Controller\ArtistController::index
 
+
 artist_show:
     path:     fr/artistes/{name}
     controller: App\Controller\ArtistController::show
@@ -61,6 +62,10 @@ scene_show:
     path:     fr/scenes/{name}
     controller: App\Controller\SceneController::show
 
+scene_showeng:
+    path:     eng/scenes/{name}
+    controller: App\Controller\SceneController::showeng
+
 scene_edit:
     path:     fr/scenes/{name}/edit
     controller: App\Controller\SceneController::edit
@@ -68,6 +73,51 @@ scene_edit:
 scene_delete:
     path:     fr/scenes/{name}/delete
     controller: App\Controller\SceneController::delete    
+
+
+alert_index:
+    path:     fr/alertes
+    controller: App\Controller\AlertController::index    
+
+alert_new:
+    path:     fr/alertes/new
+    controller: App\Controller\AlertController::new   
+    
+alert_show:
+    path:     fr/alertes/{titre}
+    controller: App\Controller\AlertController::show 
+
+alert_edit:
+    path:     fr/alertes/{titre}/edit
+    controller: App\Controller\AlertController::edit
+
+alert_delete:
+    path:     fr/alertes/{titre}/delete
+    controller: App\Controller\AlertController::delete
+    
+
+
+    
+
+
+    
+
+
+
+
+
+
+
+
+
+
+indexeng:
+    path:     eng/
+    controller: App\Controller\HomeController::indexeng
+
+alert_showeng:
+    path:     eng/alerts/{titreeng}
+    controller: App\Controller\AlertController::showeng 
 
 
 
