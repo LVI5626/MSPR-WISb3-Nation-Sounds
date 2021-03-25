@@ -1,0 +1,138 @@
+{% extends 'regist.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+<div id="background">
+<form method="post">
+<div id="title">
+    <h1 class="connection">Connexion</h1>
+            <div class="form">
+                <label for="inputEmail">Email</label>
+                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
+            </div>
+
+
+            <div class="form">
+                <label for="inputPassword">Mot de passe (Password)</label>
+                <input type="password" name="password" id="inputPassword" class="form-control" required>
+            </div>
+
+
+            <input type="hidden" name="_csrf_token"
+                value="{{ csrf_token('authenticate') }}"
+            >
+
+
+            {% if error %}
+                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+</div>
+
+    <form method="get" action="/home">
+    <button class="btn btn-lg btn-primary" type="submit">
+        Se connecter
+    </button>
+    </form>
+</form>
+    {% if app.user %}
+        <div class="mb-3">
+            Vous êtes déjà connecté au nom de : {{ app.user.username }}, <a href="{{ path('app_logout') }}">Vous déconnecter</a>
+        </div>
+    {% endif %}
+<p>Pas encore de compte ? <a href="/register">Inscrivez-vous</a></p>
+</div>
+
+<style>
+
+@font-face
+{
+    font-family: "Hero";
+    src: url("/police/My-Happy-Ending.ttf");
+}
+
+#title .alert .alert-danger{
+    color: red;
+    font-size: 12px;
+    font-family: Comfortaa
+}
+#title, .connection{
+    color: #fff;
+    font-size: 26px;
+    font-weight: normal;
+    padding-bottom: 20px;
+}
+
+.connection{
+    text-transform:uppercase;
+    font-size: 36px;
+}
+
+#background{
+    background-color: #4463EB;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 20px;
+    font-family: "Hero";
+    background-image: url("/img/peoples/login.png");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 200px;
+}
+
+input{
+    background-color: #FF4298;
+    padding: 7px 5px;
+    border: 0px solid transparent;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    margin: 5px 0px;
+}
+
+::placeholder {
+  color: #fff;
+  font-weight: normal;
+}
+
+.form{
+    display: table-caption;
+    flex-direction: row;
+    padding: 20px 0px;
+    color: #fff;
+    font-family: "Segoe UI";
+}
+
+.form label{
+    font-size: 15px;
+}
+
+.form .required{
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.btn{
+    background-color: #FF4298;
+    padding: 9px 18px;
+    border-radius: 10px;
+    border: 0px solid;
+    color: #fff
+}
+i{
+    color: #fff;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background: url(/img/icon/calendar-date.png) no-repeat;
+    background-position: center center;
+    background-size: 20px;
+    width: 20px;
+    height: 20px;
+    border-width: thin;
+}
+</style>
+{% endblock %}

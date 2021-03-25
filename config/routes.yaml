@@ -1,3 +1,81 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+
+
+welcome:
+    path:     /
+    controller: App\Controller\HomeController::welcome
+
+
+
+regist:
+    path:     /inscription
+    controller: App\Controller\RegistrationController::register
+
+index:
+    path:     fr/
+    controller: App\Controller\HomeController::index
+
+faq:
+    path:     fr/faq
+    controller: App\Controller\HomeController::faq
+
+a_propos:
+    path:     fr/a-propos
+    controller: App\Controller\HomeController::propos
+
+programme:
+    path:     fr/programme
+    controller: App\Controller\HomeController::program
+
+
+artist_index:
+    path:     fr/artistes
+    controller: App\Controller\ArtistController::index
+
+artist_show:
+    path:     fr/artistes/{name}
+    controller: App\Controller\ArtistController::show
+
+artist_showeng:
+    path:     eng/artists/{name}
+    controller: App\Controller\ArtistController::showeng
+
+artist_new:
+    path:     artistes/new
+    controller: App\Controller\ArtistController::new
+
+
+
+scene_index:
+    path:     fr/scenes
+    controller: App\Controller\SceneController::index
+
+scene_new:
+    path:     fr/scenes/new
+    controller: App\Controller\SceneController::new
+
+scene_show:
+    path:     fr/scenes/{name}
+    controller: App\Controller\SceneController::show
+
+scene_edit:
+    path:     fr/scenes/{name}/edit
+    controller: App\Controller\SceneController::edit
+
+scene_delete:
+    path:     fr/scenes/{name}/delete
+    controller: App\Controller\SceneController::delete    
+
+
+
+
+#  fr_index:
+#      path:     fr/
+ #     controller: App\Controller\HomeController::index
+
+#  eng_index:
+#      path:     en/
+#      controller: App\Controller\HomeController::indexeng

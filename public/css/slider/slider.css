@@ -1,0 +1,191 @@
+@font-face
+{
+    font-family: "Hero";
+    src: url("/police/My-Happy-Ending.ttf");
+}
+
+
+.slider {
+	position: relative;
+	height: 100%;
+    margin: 10px;
+    border-radius: 10px;
+	overflow:hidden;
+}
+
+
+.slider-content {
+	position: relative;		
+	width: 100%;
+}
+.slider-content-title{
+    position: absolute;
+    z-index: 4;
+    text-transform: uppercase;
+    font-family: "Hero";
+}
+
+.slider-content-title h1{
+    text-align: center;
+    padding: 20px 0px;
+    font-size: 26px;
+    color: #4463EB;
+    text-transform: uppercase;
+    font-size: 35px;
+    font-family: "Hero";
+    display: flex;
+    margin-left: 2%;
+    width: 100%;
+}
+
+.slider-content-title h1 img {
+    width: 30px;
+    margin: 0px 20px;
+    align-items: flex-end;
+}
+
+
+.slider-content-wrapper {
+	display: flex;
+	height:300px;
+	transition: transform 0.5s ease-in-out;
+    text-align: center;
+}
+
+.slider-content__item {
+	flex: 1 0 100%;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+    background-size: cover;
+	font-size: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    cursor: pointer;
+    font-family: "Hero";
+    text-transform: uppercase;
+}
+
+.slider-controls {
+	display: none;
+}
+
+.slider-content__controls {
+	top:0;left:0;
+	width: 100%;
+	height: 100%;
+	z-index:1;
+}
+
+.prev-arrow, .next-arrow {
+	position:absolute;
+	top:50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+	color:rgba(0,0,0, 0.3);
+	width: 20px;
+	transition: all 0.3s;
+}
+.prev-arrow {left: 20px;}
+.next-arrow {right: 20px;}
+
+.prev-arrow:hover,
+.next-arrow:hover {
+	cursor: pointer;
+	color:rgba(0,0,0, 0.7);
+}
+
+
+.dots {
+	position:absolute;
+	display: flex;
+	left:50%;
+	transform: translateX(-50%);
+	bottom:10%;
+}
+
+.dot {
+	cursor: pointer;
+    width: 16px;
+    height: 16px;
+    margin-right: 20px;
+	background-color: #fff;
+
+	border-radius: 50%;
+	transition:all 0.3s;
+}
+
+.dot:last-child {margin-right: 0;}
+.dot:hover {background-color: #fff;}
+.dot--active {background-color: #FECC00;}
+
+/* Buttons */
+
+.disabled {
+	background-color: #DCCFCF;
+	color:#B0A8A8;
+	cursor: default;
+	pointer-events:none;
+}
+
+.d-none {display: none;}
+.active {opacity: 1;}
+.centered {
+	position:relative;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);	
+}
+
+
+#background-slider{
+    height: 350px;
+    display: flex;
+    margin: 10px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#background-alert{
+    background-color: #4463EB;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 20px 0px;
+    color: #fff;
+}
+
+#background-slider h1{
+    text-align: center;
+    font-family: "Hero";
+    font-size: 60px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+
+.background-alert-text p{
+    padding: 20px 0px;
+}
+
+.background-alert-text{
+    width: 60%;
+    margin: auto;
+    text-align: justify;
+    text-align-last: center;
+}
+
+.background-alert-text img{
+    width: 50%;
+}
+
+@media (max-width: 500px){
+    .slider-content__item {
+        font-size: 25px;
+    }
+}

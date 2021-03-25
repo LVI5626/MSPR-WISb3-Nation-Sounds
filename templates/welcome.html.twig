@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{% block title %}{% endblock %}</title>
+        <link  rel="stylesheet" href="/css/welcome.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+        <link rel="icon" type="image/png" href="/img/logos/head.jpg" />
+    </head>
+    <body>
+<div id="background">
+
+
+
+            <div class="background-image">
+                    <img src="/img/logos/nation_sounds.png"/>
+            </div>
+
+            <div class="background-text">
+                    <h1>Bienvenue</h1>
+                    <p>Rejoignez notre appli pour accéder à toutes les informations du festival Nation Sounds</p>
+            </div>
+
+
+            <div class="background-button">
+
+                <button class="regist-button" onClick="parent.location='{{ path('regist') }}'">S'inscrire</button>
+
+                <button class="login-button" onClick="parent.location='/login'">Se connecter</button></a>
+
+            </div>
+</div>
+        {% block body %}{% endblock %}
+
+</body>

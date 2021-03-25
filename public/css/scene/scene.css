@@ -1,0 +1,113 @@
+@font-face
+{
+    font-family: "Hero";
+    src: url("/police/My-Happy-Ending.ttf");
+}
+
+#background-slider{
+    height: 350px;
+    display: flex;
+    margin: 10px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+#background-slider h1{
+    text-align: center;
+    font-family: "Hero";
+    font-size: 60px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+
+.artist-show-text{
+    justify-content: center;
+    align-items: center;
+    flex: 0 1 40%;
+    margin-top: 7px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.artist-show-text p{
+    padding: 5px 0px;
+    line-height: 20px;
+}
+
+.artist-show-image{
+justify-content: right;
+    flex: 0 1 35%;
+    margin-top: 7px;
+}
+    #background-artist-show{
+height: 450px; margin: 10px; border-radius: 10px;
+background-position: top center !important;
+/*background-position:center -25px !important;*/
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 24px;
+color: #fff;
+    background-size: cover !important;
+    text-align: center
+    }
+
+#flex-artist-show{
+    background-color: #4463EB;     
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    margin:10px;
+    border-radius:10px;
+    padding: 20px 0px;
+}
+.artist-show-image img{
+    width: 70%;
+}
+
+
+@media (max-width:650px){
+    #flex-artist-show{
+    display: block;
+}
+
+.artist-show-image{
+    margin: auto;
+    text-align: center;
+}
+.artist-show-image img{
+    width: 250px;
+}
+
+.artist-show-text {
+    margin-top: 7px;
+    color: #fff;
+    font-weight: bold;
+    width:75%;
+    margin : auto;
+    text-align: justify;
+    text-align-last: center;
+}
+
+}
+@media (max-width:450px){
+    #background-artist-show{
+    height: 250px;
+    margin: 10px;
+    border-radius: 10px;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+}
