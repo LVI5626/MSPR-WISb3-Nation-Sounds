@@ -33,13 +33,16 @@
     border-radius: 5px 0px 1px 3px;
 }
 
+.carousel-content .active:after {
+    content: none;
+}
 
 
 
 
 
 #maps-home{
-    margin: 10px;
+    margin: 0px 10px;
 
 }
 

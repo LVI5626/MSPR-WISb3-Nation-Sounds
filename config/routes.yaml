@@ -26,6 +26,14 @@ a_propos:
     path:     fr/a-propos
     controller: App\Controller\HomeController::propos
 
+mentions:
+    path:     fr/mentions-légales
+    controller: App\Controller\HomeController::mentions
+
+politique:
+    path:     fr/politique-de-confidentialité
+    controller: App\Controller\HomeController::politique
+
 programme:
     path:     fr/programme
     controller: App\Controller\HomeController::program
@@ -40,9 +48,6 @@ artist_show:
     path:     fr/artistes/{name}
     controller: App\Controller\ArtistController::show
 
-artist_showeng:
-    path:     eng/artists/{name}
-    controller: App\Controller\ArtistController::showeng
 
 artist_new:
     path:     artistes/new
@@ -94,16 +99,6 @@ alert_edit:
 alert_delete:
     path:     fr/alertes/{titre}/delete
     controller: App\Controller\AlertController::delete
-    
-
-
-    
-
-
-    
-
-
-
 
 
 
@@ -115,9 +110,41 @@ indexeng:
     path:     eng/
     controller: App\Controller\HomeController::indexeng
 
+programmeeng:
+    path:     eng/program
+    controller: App\Controller\HomeController::programeng
+
+mentionseng:
+    path:     eng/legal-notice
+    controller: App\Controller\HomeController::mentionseng
+
+politiqueeng:
+    path:     eng/privacy-policy
+    controller: App\Controller\HomeController::politiqueeng
+
+
+
+
+artist_indexeng:
+    path:     eng/artists
+    controller: App\Controller\ArtistController::indexeng
+
+
+artist_showeng:
+    path:     eng/artists/{name}
+    controller: App\Controller\ArtistController::showeng
+
+
+alert_indexeng:
+    path:     eng/alerts
+    controller: App\Controller\AlertController::indexeng   
+
+
+    
 alert_showeng:
-    path:     eng/alerts/{titreeng}
-    controller: App\Controller\AlertController::showeng 
+    path:     /eng/alerts/{titre}/
+    controller: App\Controller\AlertController::showeng
+
 
 
 

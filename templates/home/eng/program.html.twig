@@ -1,25 +1,25 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseeng.html.twig' %}
 
 
-{% block title %}Programme - Nations Sounds{% endblock %}
+{% block title %}Program - Nations Sounds{% endblock %}
 {% block body %}
 <div class="background">
 
            <div class="carousel-slider" id="responsive">
-                    <h1 style="color:#fff;"><img src="/img/icon/partenaires.png"/>Scène Pop Folk</h1>
+                    <h1 style="color:#fff;"><img src="/img/icon/partenaires.png"/>Pop Folk Scene</h1>
                         <div class="carousel-content" data-grid='{"xl":1,"lg":1,"md":1,"sm":1}' data-pagination="true">
 
                                 <aside class="slide-item" style="">
                                         <table class="table-friday">
-                                            <caption style="font-weight: bold; padding: 20px 0px;">Vendredi</caption>
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Friday</caption>
                                                   <tr>
-                                                    <th>Artistes</th>
-                                                    <th>Heure</th>
+                                                    <th>Artists</th>
+                                                    <th>Hour</th>
                                                   </tr>
                             {% for artist in artistpopfriday %}
 
                                                   <tr>
-                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p><a href="{{ path('artist_showeng', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
                                                     <td><p>{{ artist.hour }}</p></td>
                                                   </tr>                                
                                 
@@ -28,15 +28,15 @@
                             </aside>
                                 <aside class="slide-item" style="">
                                         <table class="table-saturday">
-                                            <caption style="font-weight: bold; padding: 20px 0px;">Samedi</caption>
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Saturday</caption>
                                                   <tr>
-                                                    <th>Artistes</th>
-                                                    <th>Heure</th>
+                                                    <th>Artists</th>
+                                                    <th>Hour</th>
                                                   </tr>
                             {% for artist in artistpopsaturday %}
 
                                                   <tr>
-                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p><a href="{{ path('artist_showeng', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
                                                     <td><p>{{ artist.hour }}</p></td>
                                                   </tr>                                
                                 
@@ -46,15 +46,15 @@
 
                                 <aside class="slide-item" style="">
                                         <table class="table-sunday">
-                                            <caption style="font-weight: bold; padding: 20px 0px;">Dimanche</caption>
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Sunday</caption>
                                                   <tr>
-                                                    <th>Artistes</th>
-                                                    <th>Heure</th>
+                                                    <th>Artists</th>
+                                                    <th>Hour</th>
                                                   </tr>
                             {% for artist in artistpopsunday %}
 
                                                   <tr>
-                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p><a href="{{ path('artist_showeng', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
                                                     <td><p>{{ artist.hour }}</p></td>
                                                   </tr>                                
                                 
@@ -72,20 +72,20 @@
 <div class="background">
 
            <div class="carousel-slider" id="responsive">
-                    <h1 style="color:#fff;"><img src="/img/icon/partenaires.png"/>Scène Rock</h1>
+                    <h1 style="color:#fff;"><img src="/img/icon/partenaires.png"/>Rock Scene</h1>
                         <div class="carousel-content" data-grid='{"xl":1,"lg":1,"md":1,"sm":1}' data-pagination="true">
 
                                 <aside class="slide-item" style="">
                                         <table class="table-friday">
-                                            <caption style="font-weight: bold; padding: 20px 0px;">Vendredi</caption>
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Friday</caption>
                                                   <tr>
-                                                    <th>Artistes</th>
-                                                    <th>Heure</th>
+                                                    <th>Artists</th>
+                                                    <th>Hour</th>
                                                   </tr>
                             {% for artist in artistrockfriday %}
 
                                                   <tr>
-                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p><a href="{{ path('artist_showeng', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
                                                     <td><p>{{ artist.hour }}</p></td>
                                                   </tr>                                
                                 
@@ -94,15 +94,15 @@
                             </aside>
                                 <aside class="slide-item" style="">
                                         <table class="table-saturday">
-                                            <caption style="font-weight: bold; padding: 20px 0px;">Samedi</caption>
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Saturday</caption>
                                                   <tr>
-                                                    <th>Artistes</th>
-                                                    <th>Heure</th>
+                                                    <th>Artists</th>
+                                                    <th>Hour</th>
                                                   </tr>
                             {% for artist in artistrocksaturday %}
 
                                                   <tr>
-                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p><a href="{{ path('artist_showeng', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
                                                     <td><p>{{ artist.hour }}</p></td>
                                                   </tr>                                
                                 
@@ -112,15 +112,15 @@
 
                                 <aside class="slide-item" style="">
                                         <table class="table-sunday">
-                                            <caption style="font-weight: bold; padding: 20px 0px;">Dimanche</caption>
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Sunday</caption>
                                                   <tr>
-                                                    <th>Artistes</th>
-                                                    <th>Heure</th>
+                                                    <th>Artists</th>
+                                                    <th>Hour</th>
                                                   </tr>
                             {% for artist in artistrocksunday %}
 
                                                   <tr>
-                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p><a href="{{ path('artist_showeng', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
                                                     <td><p>{{ artist.hour }}</p></td>
                                                   </tr>                                
                                 
@@ -138,20 +138,20 @@
 <div class="background">
 
            <div class="carousel-slider" id="responsive">
-                    <h1 style="color:#fff;"><img src="/img/icon/partenaires.png"/>Scène RAP</h1>
+                    <h1 style="color:#fff;"><img src="/img/icon/partenaires.png"/>RAP Scene</h1>
                         <div class="carousel-content" data-grid='{"xl":1,"lg":1,"md":1,"sm":1}' data-pagination="true">
 
                                 <aside class="slide-item" style="">
                                         <table class="table-friday">
-                                            <caption style="font-weight: bold; padding: 20px 0px;">Vendredi</caption>
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Friday</caption>
                                                   <tr>
-                                                    <th>Artistes</th>
-                                                    <th>Heure</th>
+                                                    <th>Artists</th>
+                                                    <th>Hour</th>
                                                   </tr>
                             {% for artist in artistrapfriday %}
 
                                                   <tr>
-                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p><a href="{{ path('artist_showeng', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
                                                     <td><p>{{ artist.hour }}</p></td>
                                                   </tr>                                
                                 
@@ -160,15 +160,15 @@
                             </aside>
                                 <aside class="slide-item" style="">
                                         <table class="table-saturday">
-                                            <caption style="font-weight: bold; padding: 20px 0px;">Samedi</caption>
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Saturday</caption>
                                                   <tr>
-                                                    <th>Artistes</th>
-                                                    <th>Heure</th>
+                                                    <th>Artists</th>
+                                                    <th>Hour</th>
                                                   </tr>
                             {% for artist in artistrapsaturday %}
 
                                                   <tr>
-                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p><a href="{{ path('artist_showeng', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
                                                     <td><p>{{ artist.hour }}</p></td>
                                                   </tr>                                
                                 
@@ -178,15 +178,15 @@
 
                                 <aside class="slide-item" style="">
                                         <table class="table-sunday">
-                                            <caption style="font-weight: bold; padding: 20px 0px;">Dimanche</caption>
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Sunday</caption>
                                                   <tr>
-                                                    <th>Artistes</th>
-                                                    <th>Heure</th>
+                                                    <th>Artists</th>
+                                                    <th>Hour</th>
                                                   </tr>
                             {% for artist in artistrapsunday %}
 
                                                   <tr>
-                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p><a href="{{ path('artist_showeng', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
                                                     <td><p>{{ artist.hour }}</p></td>
                                                   </tr>                                
                                 
@@ -204,20 +204,20 @@
 <div class="background">
 
            <div class="carousel-slider" id="responsive">
-                    <h1 style="color:#fff;"><img src="/img/icon/partenaires.png"/>Scène Jazz</h1>
+                    <h1 style="color:#fff;"><img src="/img/icon/partenaires.png"/>Jazz Scene</h1>
                         <div class="carousel-content" data-grid='{"xl":1,"lg":1,"md":1,"sm":1}' data-pagination="true">
 
                                 <aside class="slide-item" style="">
                                         <table class="table-friday">
-                                            <caption style="font-weight: bold; padding: 20px 0px;">Vendredi</caption>
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Friday</caption>
                                                   <tr>
-                                                    <th>Artistes</th>
-                                                    <th>Heure</th>
+                                                    <th>Artists</th>
+                                                    <th>Hour</th>
                                                   </tr>
                             {% for artist in artistjazzfriday %}
 
                                                   <tr>
-                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p><a href="{{ path('artist_showeng', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
                                                     <td><p>{{ artist.hour }}</p></td>
                                                   </tr>                                
                                 
@@ -226,15 +226,15 @@
                             </aside>
                                 <aside class="slide-item" style="">
                                         <table class="table-saturday">
-                                            <caption style="font-weight: bold; padding: 20px 0px;">Samedi</caption>
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Saturday</caption>
                                                   <tr>
-                                                    <th>Artistes</th>
-                                                    <th>Heure</th>
+                                                    <th>Artists</th>
+                                                    <th>Hour</th>
                                                   </tr>
                             {% for artist in artistjazzsaturday %}
 
                                                   <tr>
-                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p><a href="{{ path('artist_showeng', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
                                                     <td><p>{{ artist.hour }}</p></td>
                                                   </tr>                                
                                 
@@ -244,15 +244,15 @@
 
                                 <aside class="slide-item" style="">
                                         <table class="table-sunday">
-                                            <caption style="font-weight: bold; padding: 20px 0px;">Dimanche</caption>
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Sunday</caption>
                                                   <tr>
-                                                    <th>Artistes</th>
-                                                    <th>Heure</th>
+                                                    <th>Artists</th>
+                                                    <th>Hour</th>
                                                   </tr>
                             {% for artist in artistjazzsunday %}
 
                                                   <tr>
-                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p><a href="{{ path('artist_showeng', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
                                                     <td><p>{{ artist.hour }}</p></td>
                                                   </tr>                                
                                 
@@ -270,20 +270,20 @@
 <div class="background">
 
            <div class="carousel-slider" id="responsive">
-                    <h1 style="color:#fff;"><img src="/img/icon/partenaires.png"/>Scène Electro DJ</h1>
+                    <h1 style="color:#fff;"><img src="/img/icon/partenaires.png"/>Electro DJ Scene</h1>
                         <div class="carousel-content" data-grid='{"xl":1,"lg":1,"md":1,"sm":1}' data-pagination="true">
 
                                 <aside class="slide-item" style="">
                                         <table class="table-friday">
-                                            <caption style="font-weight: bold; padding: 20px 0px;">Vendredi</caption>
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Friday</caption>
                                                   <tr>
-                                                    <th>Artistes</th>
-                                                    <th>Heure</th>
+                                                    <th>Artists</th>
+                                                    <th>Hour</th>
                                                   </tr>
                             {% for artist in artistdjfriday %}
 
                                                   <tr>
-                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p><a href="{{ path('artist_showeng', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
                                                     <td><p>{{ artist.hour }}</p></td>
                                                   </tr>                                
                                 
@@ -292,15 +292,15 @@
                             </aside>
                                 <aside class="slide-item" style="">
                                         <table class="table-saturday">
-                                            <caption style="font-weight: bold; padding: 20px 0px;">Samedi</caption>
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Saturday</caption>
                                                   <tr>
-                                                    <th>Artistes</th>
-                                                    <th>Heure</th>
+                                                    <th>Artists</th>
+                                                    <th>Hour</th>
                                                   </tr>
                             {% for artist in artistdjsaturday %}
 
                                                   <tr>
-                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p><a href="{{ path('artist_showeng', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
                                                     <td><p>{{ artist.hour }}</p></td>
                                                   </tr>                                
                                 
@@ -310,15 +310,15 @@
 
                                 <aside class="slide-item" style="">
                                         <table class="table-sunday">
-                                            <caption style="font-weight: bold; padding: 20px 0px;">Dimanche</caption>
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Sunday</caption>
                                                   <tr>
-                                                    <th>Artistes</th>
-                                                    <th>Heure</th>
+                                                    <th>Artists</th>
+                                                    <th>Hour</th>
                                                   </tr>
                             {% for artist in artistdjsunday %}
 
                                                   <tr>
-                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p><a href="{{ path('artist_showeng', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
                                                     <td><p>{{ artist.hour }}</p></td>
                                                   </tr>                                
                                 

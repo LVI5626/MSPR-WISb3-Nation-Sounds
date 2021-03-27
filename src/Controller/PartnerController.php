@@ -38,6 +38,10 @@ class PartnerController extends AbstractController
 
     /**
      * @Route("/new", name="partner_new", methods={"GET","POST"})
+     * 
+     * Require ROLE_USER for only this controller method.
+     *
+     * @IsGranted("ROLE_USER")
      */
     public function new(Request $request, AlertRepository $alertRepository): Response
     {
@@ -62,6 +66,10 @@ class PartnerController extends AbstractController
 
     /**
      * @Route("/{id}", name="partner_show", methods={"GET"})
+     * 
+     * Require ROLE_USER for only this controller method.
+     *
+     * @IsGranted("ROLE_USER")
      */
     public function show(Partner $partner, AlertRepository $alertRepository): Response
     {
@@ -73,6 +81,10 @@ class PartnerController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="partner_edit", methods={"GET","POST"})
+     * 
+     * Require ROLE_USER for only this controller method.
+     *
+     * @IsGranted("ROLE_USER")
      */
     public function edit(Request $request, Partner $partner, AlertRepository $alertRepository): Response
     {
@@ -94,6 +106,10 @@ class PartnerController extends AbstractController
 
     /**
      * @Route("/{id}", name="partner_delete", methods={"DELETE"})
+     * 
+     * Require ROLE_USER for only this controller method.
+     *
+     * @IsGranted("ROLE_USER")
      */
     public function delete(Request $request, Partner $partner): Response
     {

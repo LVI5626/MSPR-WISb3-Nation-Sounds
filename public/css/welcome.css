@@ -71,7 +71,8 @@ body {
   font-size: 24px;
   font-weight: bold;
   margin: 20px auto;
-  width: 70%;
+  width: 25%;
+  cursor: pointer;
 }
 
 .login-button{
@@ -82,7 +83,8 @@ body {
   font-size: 24px;
   font-weight: bold;
   margin: 20px auto;
-  width: 70%;
+  width: 25%;
+  cursor: pointer;
 }
 
 
@@ -114,4 +116,19 @@ body {
 .background-title h1 {
   width: 75%;
 }
+}
+
+@media (max-width: 950px){
+ 
+  .login-button, .regist-button{
+    width: 50%;
+  }
+}
+
+
+@media (max-width: 550px){
+ 
+  .login-button, .regist-button{
+    width: 70%;
+  }
 }

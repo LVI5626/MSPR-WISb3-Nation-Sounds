@@ -1,0 +1,25 @@
+{% extends 'baseeng.html.twig' %}
+
+{% block title %}Alert{% endblock %}
+
+{% block body %}
+
+    <div id="background-slider" style="background-image: url({{ alert.photo }});">
+
+                <h1>{{ alert.titreeng }}</h1>
+</div>
+    <div id="background-alert">
+    <div class="background-alert-text">
+                <p>{{ alert.texteng }}</p>
+
+
+                <img src="{{ alert.photo2 }}"/>
+    </div>
+    </div>
+
+    <a href="{{ path('alert_index') }}">back to list</a>
+
+    <a href="{{ path('alert_edit', {'titre': alert.titre}) }}">edit</a>
+
+    {{ include('alert/_delete_form.html.twig') }}
+{% endblock %}

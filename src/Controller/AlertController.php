@@ -29,6 +29,19 @@ class AlertController extends AbstractController
             'scenes' => $sceneRepository->findAll(),
             'artists' => $artistRepository->findBy([],['name'=>'ASC']),
             'show1' => $artistRepository->findBy(['date'=>'Vendredi', 'scene' => '1'],['hour'=>'ASC']),
+            'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
+        ]);
+    }
+
+    public function indexeng(AlertRepository $alertRepository, ArtistRepository $artistRepository, PartnerRepository $partnerRepository, SceneRepository $sceneRepository): Response
+    {
+        return $this->render('alert/indexeng.html.twig', [
+            'alerts' => $alertRepository->findAll(),
+            'partners' => $partnerRepository->findAll(),
+            'scenes' => $sceneRepository->findAll(),
+            'artists' => $artistRepository->findBy([],['name'=>'ASC']),
+            'show1' => $artistRepository->findBy(['date'=>'Vendredi', 'scene' => '1'],['hour'=>'ASC']),
+            'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
         ]);
     }
 
@@ -56,7 +69,12 @@ class AlertController extends AbstractController
         ]);
     }
 
-
+    /**
+     * 
+     * Require ROLE_USER for only this controller method.
+     *
+     * @IsGranted("ROLE_USER")
+     */
     public function show(Alert $alert, PartnerRepository $partnerRepository, AlertRepository $alertRepository): Response
     {
         return $this->render('alert/show.html.twig', [
@@ -65,17 +83,27 @@ class AlertController extends AbstractController
             'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
         ]);
     }
-
+    /**
+     * 
+     * Require ROLE_USER for only this controller method.
+     *
+     * @IsGranted("ROLE_USER")
+     */
     public function showeng(Alert $alert, PartnerRepository $partnerRepository, AlertRepository $alertRepository): Response
     {
-        return $this->render('alert/eng/show.html.twig', [
+        return $this->render('alert/showeng.html.twig', [
             'alert' => $alert,
             'partners' => $partnerRepository->findAll(),
             'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
         ]);
     }
 
-
+    /**
+     * 
+     * Require ROLE_ADMIN for only this controller method.
+     *
+     * @IsGranted("ROLE_ADMIN")
+     */
     public function edit(Request $request, Alert $alert, PartnerRepository $partnerRepository): Response
     {
         $form = $this->createForm(AlertType::class, $alert);
@@ -95,7 +123,12 @@ class AlertController extends AbstractController
         ]);
     }
 
-
+    /**
+     * 
+     * Require ROLE_ADMIN for only this controller method.
+     *
+     * @IsGranted("ROLE_ADMIN")
+     */
     public function delete(Request $request, Alert $alert): Response
     {
         if ($this->isCsrfTokenValid('delete'.$alert->getId(), $request->request->get('_token'))) {

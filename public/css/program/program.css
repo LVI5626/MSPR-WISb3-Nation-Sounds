@@ -1,0 +1,103 @@
+@font-face
+{
+    font-family: "Hero";
+    src: url("/police/My-Happy-Ending.ttf");
+}
+
+.table-friday, .table-saturday, .table-sunday,  .table-friday td, .table-saturday td, .table-sunday td,
+.table-friday th, .table-saturday th, .table-sunday th {
+    border: 3px solid #fff;
+    border-collapse: collapse;
+    color: #fff;
+  }
+  
+  .table-friday, .table-saturday, .table-sunday  {
+    border: 3px solid #fff;
+    border-collapse: collapse;
+    color: #fff;
+    table-layout: auto;
+    width: 40%;
+  }
+  
+  caption{
+    font-size: 36px;
+    text-transform: uppercase;
+    font-family: "Hero";
+  }
+  
+.table-friday th{
+    background: #b90d5b;   
+    padding: 3% 0px;
+    font-size: 20px;
+}  
+
+.table-friday td{
+    background: #F72585; 
+    padding: 5% 0px;
+    font-size: 18px;  
+}
+
+
+.table-saturday th{
+    background: #2941A9;  
+    padding: 3% 0px;
+    font-size: 20px; 
+}  
+
+.table-saturday td{
+    background: #4463EB;   
+    padding: 5% 0px;
+    font-size: 18px;
+}
+
+
+.table-sunday th{
+    background: #dba932;   
+    padding: 3% 0px;
+    font-size: 20px;
+}  
+
+.table-sunday td{
+    background: #FFDA85;   
+    padding: 5% 0px;
+    font-size: 18px;
+}
+
+  td a{
+    font-weight: bold;
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+  .background{
+    background-color: #4463EB;
+    margin:10px;
+    border-radius: 10px;
+    padding-bottom: 20px;
+  }
+
+
+
+ .background .carousel-slider .carousel-next-btn, .background  .carousel-slider .carousel-prev-btn {
+    color: #fff  !important;
+}
+
+@media (max-width:650px){
+    .table-friday, .table-saturday, .table-sunday {
+        border: 3px solid #fff;
+        border-collapse: collapse;
+        color: #fff;
+        table-layout: auto;
+        width: 80%;
+      }
+      .table-friday th, .table-saturday th, .table-sunday th{
+        font-size: 16px;
+    }  
+
+    .table-friday td, .table-saturday td, .table-sunday td{
+        font-size: 13px;
+    }  
+    .background .carousel-slider .carousel-next-btn, .background .carousel-slider .carousel-prev-btn {
+        top: 75%;
+    }
+}

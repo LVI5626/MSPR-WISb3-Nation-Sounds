@@ -1,0 +1,188 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mentions légales - Nations Sounds{% endblock %}
+
+{% block body %}
+
+<style>
+@font-face
+{
+    font-family: "Hero";
+    src: url("/police/My-Happy-Ending.ttf");
+}
+
+.accordion {
+  background-color: #F72585;
+  color: #fff;
+  cursor: pointer;
+  padding: 0px 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 25px;
+  font-weight: bold;
+  transition: 0.4s;
+  border-radius: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+}
+
+
+button.accordion.active{
+  border-radius: 10px 10px 0px 0px !important;
+}
+.panel {
+  padding: 0 18px;
+  background-color: #F72585;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  color: #fff;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.panel p{
+  padding: 20px 0px;
+  width: 80%;
+}
+
+#faq{
+  margin: 10px;
+}
+
+.box{
+  margin:20px 0px;
+}
+
+#background-about{
+    padding: 20px;
+    background-color: #4463EB;
+    color: #fff;
+    border-radius: 10px;
+}
+
+#faq h1{
+    text-align: center;
+    font-family: "Hero";
+    padding: 20px 0px;
+    font-size: 26px;
+    color: #4463EB;
+    text-transform: uppercase;
+    font-size: 35px;
+    font-family: "Hero";
+    display: flex;
+    margin-left: 2%;
+}
+#faq h1 img {
+    width: 30px;
+    margin: 0px 20px;
+    align-items: flex-end;
+}
+
+.parragraf{
+  padding: 20px 0px;
+  width:90%;
+}
+
+.parragraf h3{
+  padding: 5px 0px;
+  font-size: 24px;
+}
+
+@media (max-width: 650px){
+.accordion {
+    font-size: 18px;
+}
+
+}
+
+
+@media (max-width: 400px){
+.accordion {
+    font-size: 14px;
+    height: 50px;
+}
+
+.accordion:after {
+    font-size: 30px;
+}
+
+}
+
+
+</style>
+<div id="faq">
+          <h1><img src="/img/icon/faq.png"/>Mentions légales</h1>
+<div id="background-about">
+
+<div class="parragraf">
+<p>Les visiteurs peuvent contacter l’équipe directement à l’adresse info@​nationsounds.​fr, ou au 02 98 99 25 45.</p>
+
+<p>Conformément à la loi Informatique et libertés du 6 janvier 1978, l’utilisateur dispose d’un droit d’accès, de rectification et de suppression des données le concernant.</p>
+
+<p>Site internet réalisé en collaboration par Paul Crappier et Louis Déprez.</p>
+</div>
+
+
+<div class="parragraf">
+<h3>Qui sommes-​nous ?</h3>
+
+<p>L’interface de notre site web, disponible à l’adresse https://​www​.nation-sounds.fr a pour vocation de relayer les communications essentielles du Festival vers les festivaliers.</p>
+
+<p>Chaque visiteur, après son passage sur notre site internet, laisse des informations sur lui-​même. Ces information varient en fonction du nombre d’actions effectuées durant son passage. De ce fait, il est possible qu’une personne physique puisse être identifiée. Dès lors, nous collectons et traitons ces données à caractère personnel.
+
+politique de confidentialité des données</p>
+
+<p>L’association des Vieilles Charrues traite les données personnelles avec grand respect. Toutes les informations personnelles que vous avez partagé ou partagerez seront conservées en tout sécurité. Nous ne vendons ou ne transmettons aucune données à des entreprises, même partenaires du festival.</p>
+</div>
+
+<div class="parragraf">
+
+<h3>Newsletter</h3>
+
+<p>Pour vous inscrire à la newsletter du festival, vous renseignez votre email. Cette information est conservée en toute sécurité via un outil d’envoi de newsletters, en conformité avec la RGPD. L’unique but de cette conservation de données étant l’envoi de newsletters en lien direct avec le festival. Seule l’équipe du bureau de communication du festival des Vieilles Charrues peut accéder à ces données.
+Vous pouvez vous désinscrire quand vous le souhaitez de la newsletter en cliquant sur le lien « Se désinscrire » en bas de chaque email reçu.</p>
+</div>
+
+<div class="parragraf">
+<h3>Billetterie :</h3>
+
+<p>Lorsque vous souhaitez passer une commande de billets depuis notre site web de billetterie, vous êtes systématiquement redirigé vers le site de la billetterie de notre partenaire, Digitick. Pour de plus amples informations au sujet du traitement des données fournies lors de l’achat d’un produit de la billetterie, merci de consulter la charte du partenaire précédemment cité.</p>
+</div>
+
+<div class="parragraf">
+<h3>Moneiz, Klub et données billetterie</h3>
+
+<p>Les informations personnelles que vous fournissez dans les encarts du site prévus à cet effet (Noms, prénoms, adresse email, numéros de téléphone, code postal, ville, date de naissance) sont conservées par Live events, en toute sécurité. Pour en savoir plus, veuillez consulter la politique de confidentialité de Live events. Seuls Live events et le service communication du festival Nation Sounds peuvent accéder à ces données.</p>
+</div>
+
+<div class="parragraf">
+<h3>Sécurité</h3>
+
+La technologie https est utilisée pour crypter les formulaires en ligne et s’assurer que chaque information transitant entre vos appareils et le site internet soient maintenu secrète. Les certificats SSL vous assurent que les pages que vous visitez proviennent bien de notre site et permettent ainsi d’éviter la fraude.
+</div>
+
+<div class="parragraf">
+<h3>Confidentialité des courriers électroniques</h3>
+
+<p>À propos de tout courrier électronique adressé au Festival de Nation Sounds à travers ce site :
+– le secret des correspondances transmises par le réseau Internet n’est pas garanti ;
+– les courriers électroniques sont conservés sur support informatique, au moins le temps nécessaire à l’administration pour fournir une réponse ou pour traiter votre demande.</p>
+</div>
+
+<div class="parragraf">
+<h3>Hébergement</h3>
+
+<p>Le site www​.nation-sounds​.fr est hébergé par la société Amazon Web Services :</p>
+Amazon Web Services LLC
+P.O. Box 81226
+Seattle, WA 98108-1226
+http://​aws​.amazon​.com
+        </div>
+        </div>
+        </div>
+        
+{% endblock %}

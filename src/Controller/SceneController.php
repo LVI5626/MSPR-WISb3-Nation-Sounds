@@ -34,7 +34,12 @@ class SceneController extends AbstractController
             
         ]);
     }
-
+    /**
+     * 
+     * Require ROLE_ADMIN for only this controller method.
+     *
+     * @IsGranted("ROLE_ADMIN")
+     */
     public function new(Request $request, PartnerRepository $partnerRepository,AlertRepository $alertRepository): Response
     {
         $scene = new Scene();
@@ -57,7 +62,12 @@ class SceneController extends AbstractController
         ]);
     }
 
-
+    /**
+     * 
+     * Require ROLE_USER for only this controller method.
+     *
+     * @IsGranted("ROLE_USER")
+     */
     public function show(Scene $scene, PartnerRepository $partnerRepository, ArtistRepository $artistRepository, AlertRepository $alertRepository): Response
     {
         $partner = $partnerRepository->findAll();
@@ -71,6 +81,12 @@ class SceneController extends AbstractController
         ]);
     }
 
+    /**
+     * 
+     * Require ROLE_USER for only this controller method.
+     *
+     * @IsGranted("ROLE_USER")
+     */
     public function showeng(Scene $scene, PartnerRepository $partnerRepository, ArtistRepository $artistRepository, AlertRepository $alertRepository): Response
     {
         $partner = $partnerRepository->findAll();
@@ -84,7 +100,12 @@ class SceneController extends AbstractController
         ]);
     }
 
-
+    /**
+     * 
+     * Require ROLE_ADMIN for only this controller method.
+     *
+     * @IsGranted("ROLE_ADMIN")
+     */
     public function edit(Request $request, Scene $scene, PartnerRepository $partnerRepository, AlertRepository $alertRepository): Response
     {
         $form = $this->createForm(SceneType::class, $scene);
@@ -104,7 +125,12 @@ class SceneController extends AbstractController
         ]);
     }
 
-
+    /**
+     * 
+     * Require ROLE_ADMIN for only this controller method.
+     *
+     * @IsGranted("ROLE_ADMIN")
+     */
     public function delete(Request $request, Scene $scene, AlertRepository $alertRepository): Response
     {
         if ($this->isCsrfTokenValid('delete'.$scene->getId(), $request->request->get('_token'))) {

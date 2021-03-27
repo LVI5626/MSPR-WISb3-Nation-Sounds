@@ -51,7 +51,7 @@
 <div id="billet">
 <h1> <img src="/img/icon/ticket-jaune.png"/>Display my Ticket</h1>
 </div>
-    <div onclick="location.href='{{ path('artist_index') }}'" id="artists-background">
+    <div onclick="location.href='{{ path('artist_indexeng') }}'" id="artists-background">
             <p>See the list of musicians</p>
     </div>
 
@@ -63,7 +63,7 @@
             <h1><img src="/img/icon/infos.png"/>Festival Informations</h1>
             </div>
             {% for alert in alerts %}
-				<div class="slider-content__item " onclick="location.href='{{ path('artist_index') }}'" style="background-image: url({{ alert.photo }});">{{ alert.titreeng }}</div>
+			<div class="slider-content__item " onclick="location.href='{{ path('alert_showeng', {'titre': alert.titre}) }}'" style="background-image: url({{ alert.photo }});">{{ alert.titreeng }}</div>
                 {% endfor %}
 
 			</div>
