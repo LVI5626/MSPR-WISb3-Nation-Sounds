@@ -24,11 +24,6 @@ body {
   min-height: 500px;
 }
 
-.main2{
-  /*background-image: url(/img/background/background-site.png);
-  background-size: 100%;
-  background-position: center top; */
-}
 
 
 
@@ -40,6 +35,13 @@ body {
   text-align: center;
   position: static;
   margin: 10px;
+}
+
+#alert a{
+  color: #000;
+  text-decoration: none;
+  width: 65%;
+  margin: auto;
 }
 
 
@@ -268,69 +270,8 @@ body {
   
   
   
-  /* menu icon */
- 
-/* Header mode Bureau*/
 
-  nav{
-    display: flex;
-    width: 75%;
-    margin: 0px auto;;
-    padding: 20px 0px;
-    z-index: 1;
-    align-items: center;
-  }
-  
-  nav a{
-    color: #FECC00;
-    text-decoration: none;
-    font-size: 17.5px;
-    font-weight: bold;
-  }
 
-  
-  .grilles, .direct, .catalogues{
-    border-radius: 20px;
-    margin: 15px 30px;
-  }
-  .grilles:hover, .direct:hover, .catalogues:hover, .ee:hover{
-    opacity: 0.6;
-    transition: 0.3s;
-  }
-  
-  
-  
-  
-  
-  .right{
-    margin-left: auto;
-  }
-  
-  .left{
-    margin-left: 2%;
-  }
-  
-  
-  
-  .ee{
-    text-align: left;
-    font-size: 19.5px;
-    margin: 20px;
-  }
-  
-  
-  
-  
-  .eechnls{
-    background-color: transparent;
-    border-radius: 20px;
-    padding: 5px 6px;
-    margin: 12px 0px;
-    font-size: 15.5px;
-    color: #000;
-    margin-right: 20px;
-  }
-  
   
   
   
@@ -419,6 +360,11 @@ footer{
   margin: 20px 0px;
 }
 
+.footer-flex a{
+  color: #fff;
+  text-decoration: none;
+}
+
             
 .footer-right{
    width: 20%;
@@ -498,5 +444,9 @@ footer img{
 }
 footer img {
   width: 25px;
+}
+
+.language{
+    margin-left: 73%;
 }
 }

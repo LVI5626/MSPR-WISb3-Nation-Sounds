@@ -1,0 +1,49 @@
+@font-face
+{
+    font-family: "Hero";
+    src: url("/police/My-Happy-Ending.ttf");
+}
+
+.background-scene{
+    margin: 20px 10px;
+    border-radius: 10px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+
+.background-scene h1{
+    font-size: 35px;
+}
+
+#title h1{
+    text-align: center;
+    padding: 20px 0px;
+    font-size: 26px;
+    color: #4463EB;
+    text-transform: uppercase;
+    font-size: 35px;
+    font-family: "Hero";
+    display: flex;
+    margin-left: 2%;
+}
+#title h1 img{
+    width: 30px;
+    margin: 0px 20px;
+    align-items: flex-end;
+}
+
+
+@media (max-width:550px){
+    .background-scene{
+        height: 250px;
+    }   
+}

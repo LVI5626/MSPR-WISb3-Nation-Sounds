@@ -3,105 +3,335 @@
 
 {% block title %}Programme - Nations Sounds{% endblock %}
 {% block body %}
-<div id="background">
-           <div class="carousel-slider" id="responsive">
-                    <h1><img src="/img/icon/partenaires.png"/>Nos partenaires</h1>
-                        <div class="carousel-content" data-grid='{"xl":1,"lg":1,"md":1,"sm":1}' data-pagination="true">
-
-                            {% for partner in partners %}
-                                <aside class="slide-item" style="">
-                                        <img src="{{ partner.picture }}"/><p>
-                                        <p>{{ partner.name }}</p>
-                                </aside>
-                            {% endfor %}
-                        </div>
-                    <button class="carousel-prev-btn"><</button>
-                    <button class="carousel-next-btn">></button>
-                        <div class="carousel-pagination"></div>
-            </div>
-
+<div class="background">
 
            <div class="carousel-slider" id="responsive">
-                    <h1><img src="/img/icon/partenaires.png"/>Nos partenaires</h1>
+                    <h1 style="color:#fff;"><img src="/img/icon/partenaires.png"/>Scène Pop Folk</h1>
                         <div class="carousel-content" data-grid='{"xl":1,"lg":1,"md":1,"sm":1}' data-pagination="true">
 
                                 <aside class="slide-item" style="">
-                                        <table>
+                                        <table class="table-friday">
                                             <caption style="font-weight: bold; padding: 20px 0px;">Vendredi</caption>
+                                                  <tr>
+                                                    <th>Artistes</th>
+                                                    <th>Heure</th>
+                                                  </tr>
+                            {% for artist in artistpopfriday %}
 
                                                   <tr>
-                                                    <th>Contact</th>
-                                                    <th>Country</th>
-                                                  </tr>
+                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p>{{ artist.hour }}</p></td>
+                                                  </tr>                                
+                                
+                            {% endfor %}
+                            </table>        
+                            </aside>
+                                <aside class="slide-item" style="">
+                                        <table class="table-saturday">
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Samedi</caption>
                                                   <tr>
-                                                    <td>Maria Anders</td>
-                                                    <td>Germany</td>
+                                                    <th>Artistes</th>
+                                                    <th>Heure</th>
                                                   </tr>
+                            {% for artist in artistpopsaturday %}
+
                                                   <tr>
-                                                    <td>Christina Berglund</td>
-                                                    <td>Sweden</td>
-                                                  </tr>
-                                          </table>
-                                </aside>
+                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p>{{ artist.hour }}</p></td>
+                                                  </tr>                                
+                                
+                            {% endfor %}
+                            </table>        
+                            </aside>
 
                                 <aside class="slide-item" style="">
-                                        <table summary="exemple de structure d'un tableau de données 2 lignes, 2 colonnes">
-                                            <caption style="font-weight: bold;">Samedi</caption>
+                                        <table class="table-sunday">
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Dimanche</caption>
+                                                  <tr>
+                                                    <th>Artistes</th>
+                                                    <th>Heure</th>
+                                                  </tr>
+                            {% for artist in artistpopsunday %}
 
                                                   <tr>
-                                                    <th>Contact</th>
-                                                    <th>Country</th>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>Maria Anders</td>
-                                                    <td>Germany</td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>Christina Berglund</td>
-                                                    <td>Sweden</td>
-                                                  </tr>
-                                          </table>
-                                </aside>
+                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p>{{ artist.hour }}</p></td>
+                                                  </tr>                                
+                                
+                            {% endfor %}
+                            </table>        
+                            </aside>
 
-                                <aside class="slide-item" style="">
-                                        <table summary="exemple de structure d'un tableau de données 2 lignes, 2 colonnes">
-                                            <caption style="font-weight: bold;">Dimanche</caption>
 
-                                                  <tr>
-                                                    <th>Company</th>
-                                                    <th>Contact</th>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>Alfreds Futterkiste</td>
-                                                    <td>Germany</td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>Berglunds snabbköp</td>
-                                                    <td>Sweden</td>
-                                                  </tr>
-                                          </table>
-                                </aside>
                         </div>
                     <button class="carousel-prev-btn"><</button>
                     <button class="carousel-next-btn">></button>
                         <div class="carousel-pagination"></div>
             </div>
-
+</div>
+<div class="background">
 
            <div class="carousel-slider" id="responsive">
-                    <h1><img src="/img/icon/partenaires.png"/>Nos partenaires</h1>
+                    <h1 style="color:#fff;"><img src="/img/icon/partenaires.png"/>Scène Rock</h1>
                         <div class="carousel-content" data-grid='{"xl":1,"lg":1,"md":1,"sm":1}' data-pagination="true">
 
-                            {% for partner in partners %}
                                 <aside class="slide-item" style="">
-                                        <img src="{{ partner.picture }}"/><p>
-                                        <p>{{ partner.name }}</p>
-                                </aside>
+                                        <table class="table-friday">
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Vendredi</caption>
+                                                  <tr>
+                                                    <th>Artistes</th>
+                                                    <th>Heure</th>
+                                                  </tr>
+                            {% for artist in artistrockfriday %}
+
+                                                  <tr>
+                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p>{{ artist.hour }}</p></td>
+                                                  </tr>                                
+                                
                             {% endfor %}
+                            </table>        
+                            </aside>
+                                <aside class="slide-item" style="">
+                                        <table class="table-saturday">
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Samedi</caption>
+                                                  <tr>
+                                                    <th>Artistes</th>
+                                                    <th>Heure</th>
+                                                  </tr>
+                            {% for artist in artistrocksaturday %}
+
+                                                  <tr>
+                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p>{{ artist.hour }}</p></td>
+                                                  </tr>                                
+                                
+                            {% endfor %}
+                            </table>        
+                            </aside>
+
+                                <aside class="slide-item" style="">
+                                        <table class="table-sunday">
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Dimanche</caption>
+                                                  <tr>
+                                                    <th>Artistes</th>
+                                                    <th>Heure</th>
+                                                  </tr>
+                            {% for artist in artistrocksunday %}
+
+                                                  <tr>
+                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p>{{ artist.hour }}</p></td>
+                                                  </tr>                                
+                                
+                            {% endfor %}
+                            </table>        
+                            </aside>
+
+
                         </div>
                     <button class="carousel-prev-btn"><</button>
                     <button class="carousel-next-btn">></button>
                         <div class="carousel-pagination"></div>
             </div>
-</div>   
+</div>
+<div class="background">
+
+           <div class="carousel-slider" id="responsive">
+                    <h1 style="color:#fff;"><img src="/img/icon/partenaires.png"/>Scène RAP</h1>
+                        <div class="carousel-content" data-grid='{"xl":1,"lg":1,"md":1,"sm":1}' data-pagination="true">
+
+                                <aside class="slide-item" style="">
+                                        <table class="table-friday">
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Vendredi</caption>
+                                                  <tr>
+                                                    <th>Artistes</th>
+                                                    <th>Heure</th>
+                                                  </tr>
+                            {% for artist in artistrapfriday %}
+
+                                                  <tr>
+                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p>{{ artist.hour }}</p></td>
+                                                  </tr>                                
+                                
+                            {% endfor %}
+                            </table>        
+                            </aside>
+                                <aside class="slide-item" style="">
+                                        <table class="table-saturday">
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Samedi</caption>
+                                                  <tr>
+                                                    <th>Artistes</th>
+                                                    <th>Heure</th>
+                                                  </tr>
+                            {% for artist in artistrapsaturday %}
+
+                                                  <tr>
+                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p>{{ artist.hour }}</p></td>
+                                                  </tr>                                
+                                
+                            {% endfor %}
+                            </table>        
+                            </aside>
+
+                                <aside class="slide-item" style="">
+                                        <table class="table-sunday">
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Dimanche</caption>
+                                                  <tr>
+                                                    <th>Artistes</th>
+                                                    <th>Heure</th>
+                                                  </tr>
+                            {% for artist in artistrapsunday %}
+
+                                                  <tr>
+                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p>{{ artist.hour }}</p></td>
+                                                  </tr>                                
+                                
+                            {% endfor %}
+                            </table>        
+                            </aside>
+
+
+                        </div>
+                    <button class="carousel-prev-btn"><</button>
+                    <button class="carousel-next-btn">></button>
+                        <div class="carousel-pagination"></div>
+            </div>
+</div>
+<div class="background">
+
+           <div class="carousel-slider" id="responsive">
+                    <h1 style="color:#fff;"><img src="/img/icon/partenaires.png"/>Scène Jazz</h1>
+                        <div class="carousel-content" data-grid='{"xl":1,"lg":1,"md":1,"sm":1}' data-pagination="true">
+
+                                <aside class="slide-item" style="">
+                                        <table class="table-friday">
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Vendredi</caption>
+                                                  <tr>
+                                                    <th>Artistes</th>
+                                                    <th>Heure</th>
+                                                  </tr>
+                            {% for artist in artistjazzfriday %}
+
+                                                  <tr>
+                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p>{{ artist.hour }}</p></td>
+                                                  </tr>                                
+                                
+                            {% endfor %}
+                            </table>        
+                            </aside>
+                                <aside class="slide-item" style="">
+                                        <table class="table-saturday">
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Samedi</caption>
+                                                  <tr>
+                                                    <th>Artistes</th>
+                                                    <th>Heure</th>
+                                                  </tr>
+                            {% for artist in artistjazzsaturday %}
+
+                                                  <tr>
+                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p>{{ artist.hour }}</p></td>
+                                                  </tr>                                
+                                
+                            {% endfor %}
+                            </table>        
+                            </aside>
+
+                                <aside class="slide-item" style="">
+                                        <table class="table-sunday">
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Dimanche</caption>
+                                                  <tr>
+                                                    <th>Artistes</th>
+                                                    <th>Heure</th>
+                                                  </tr>
+                            {% for artist in artistjazzsunday %}
+
+                                                  <tr>
+                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p>{{ artist.hour }}</p></td>
+                                                  </tr>                                
+                                
+                            {% endfor %}
+                            </table>        
+                            </aside>
+
+
+                        </div>
+                    <button class="carousel-prev-btn"><</button>
+                    <button class="carousel-next-btn">></button>
+                        <div class="carousel-pagination"></div>
+            </div>
+</div>
+<div class="background">
+
+           <div class="carousel-slider" id="responsive">
+                    <h1 style="color:#fff;"><img src="/img/icon/partenaires.png"/>Scène Electro DJ</h1>
+                        <div class="carousel-content" data-grid='{"xl":1,"lg":1,"md":1,"sm":1}' data-pagination="true">
+
+                                <aside class="slide-item" style="">
+                                        <table class="table-friday">
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Vendredi</caption>
+                                                  <tr>
+                                                    <th>Artistes</th>
+                                                    <th>Heure</th>
+                                                  </tr>
+                            {% for artist in artistdjfriday %}
+
+                                                  <tr>
+                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p>{{ artist.hour }}</p></td>
+                                                  </tr>                                
+                                
+                            {% endfor %}
+                            </table>        
+                            </aside>
+                                <aside class="slide-item" style="">
+                                        <table class="table-saturday">
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Samedi</caption>
+                                                  <tr>
+                                                    <th>Artistes</th>
+                                                    <th>Heure</th>
+                                                  </tr>
+                            {% for artist in artistdjsaturday %}
+
+                                                  <tr>
+                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p>{{ artist.hour }}</p></td>
+                                                  </tr>                                
+                                
+                            {% endfor %}
+                            </table>        
+                            </aside>
+
+                                <aside class="slide-item" style="">
+                                        <table class="table-sunday">
+                                            <caption style="font-weight: bold; padding: 20px 0px;">Dimanche</caption>
+                                                  <tr>
+                                                    <th>Artistes</th>
+                                                    <th>Heure</th>
+                                                  </tr>
+                            {% for artist in artistdjsunday %}
+
+                                                  <tr>
+                                                    <td><p><a href="{{ path('artist_show', {'name': artist.name}) }}">{{ artist.name }}</a></p></td>
+                                                    <td><p>{{ artist.hour }}</p></td>
+                                                  </tr>                                
+                                
+                            {% endfor %}
+                            </table>        
+                            </aside>
+
+
+                        </div>
+                    <button class="carousel-prev-btn"><</button>
+                    <button class="carousel-next-btn">></button>
+                        <div class="carousel-pagination"></div>
+            </div>
+</div>
+
 {% endblock %}

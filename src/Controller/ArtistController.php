@@ -23,7 +23,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 class ArtistController extends AbstractController
 {
 /**
-    * Require ROLE_ADMIN for only this controller method.
+    * Require ROLE_USER for only this controller method.
     *
     * @IsGranted("ROLE_USER")
 */    
@@ -36,6 +36,22 @@ class ArtistController extends AbstractController
             'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
         ]);
     }
+
+
+/**
+    * Require ROLE_USER for only this controller method.
+    *
+    * @IsGranted("ROLE_USER")
+*/    
+
+public function indexeng(ArtistRepository $artistRepository, PartnerRepository $partnerRepository, AlertRepository $alertRepository): Response
+{
+    return $this->render('artist/eng/index.html.twig', [
+        'artists' => $artistRepository->findAll(),
+        'partners' => $partnerRepository->findAll(),
+        'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
+    ]);
+}
 
 
 /**
@@ -96,7 +112,7 @@ class ArtistController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="artist_edit", methods={"GET","POST"})
+     * @Route("artistes/{name}/edit", name="artist_edit", methods={"GET","POST"})
      *
     * Require ROLE_ADMIN for only this controller method.
     *

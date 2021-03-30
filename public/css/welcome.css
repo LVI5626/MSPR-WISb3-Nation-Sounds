@@ -71,7 +71,8 @@ body {
   font-size: 24px;
   font-weight: bold;
   margin: 20px auto;
-  width: 70%;
+  width: 25%;
+  cursor: pointer;
 }
 
 .login-button{
@@ -82,7 +83,8 @@ body {
   font-size: 24px;
   font-weight: bold;
   margin: 20px auto;
-  width: 70%;
+  width: 25%;
+  cursor: pointer;
 }
 
 
@@ -100,8 +102,48 @@ body {
   font-family: "Hero";
   text-transform: uppercase;
   font-family: 32px;
-  padding: 20px;;
+  padding: 20px;
 }
+
+
+
+.alert {
+  padding: 40px 20px;
+  background-color: #F72585;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  margin: auto;
+  justify-content: center;
+  width: 70%;
+}
+
+.alert strong{
+  font-size: 32px;
+}
+
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 10px 0px;
+  padding: 5px 20px;
+  background-color: #4463EB;
+}
+
+.closebtn:hover {
+  opacity: 0.7;
+}
+
+
 
 @media (max-width: 600px){
   .background-image img {
@@ -114,4 +156,19 @@ body {
 .background-title h1 {
   width: 75%;
 }
+}
+
+@media (max-width: 950px){
+ 
+  .login-button, .regist-button{
+    width: 50%;
+  }
+}
+
+
+@media (max-width: 550px){
+ 
+  .login-button, .regist-button{
+    width: 70%;
+  }
 }

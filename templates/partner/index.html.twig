@@ -3,8 +3,13 @@
 {% block title %}Nos partenaires - Nations Sounds{% endblock %}
 
 {% block body %}
-<h1>Nos partneaires</h1>
+    <div id="title">
+        <h1><img src="/img/icon/partenaires.png"/>Nos partenaires</h1>
+    </div>
+
+<div class="twit-title">
     <h1>Radios</h1>
+</div>
 <main class="twit-container">
         {% for partner in radio %}
             <article class="twit">
@@ -15,8 +20,10 @@
             </article>
         {% endfor %}
 </main>
-    <h1>Journaux</h1>
 
+<div class="twit-title">
+    <h1>Journaux</h1>
+</div>
 <main class="twit-container">
         {% for partner in journal %}
             <article class="twit">
@@ -28,9 +35,9 @@
         {% endfor %}
 </main>
 
-
+<div class="twit-title">
     <h1>Boissons</h1>
-
+</div>
 <main class="twit-container">
         {% for partner in boisson %}
             <article class="twit">
@@ -42,9 +49,9 @@
         {% endfor %}
 </main>
 
-
+<div class="twit-title">
     <h1>Chaînes</h1>
-
+</div>
 <main class="twit-container">
         {% for partner in chaîne %}
             <article class="twit">
@@ -55,56 +62,4 @@
             </article>
         {% endfor %}
 </main>
-
-<style>
-  .twit img{
-      width: 150px;
-      margin: auto;
-  }
-
-.twit-container {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 5px;
-    margin: -10px 0 0 -10px;
-    position: relative;
-    justify-content: space-around;
-  }
-  
-  .twit {
-    display: inline-block;
-    padding: 20px;
-    width: 30%;
-    height: 150px;
-    background-color: transparent;
-    border-radius: 20px;
-    display: flex;
-    align-items: flex-end;
-    margin: 3% 3%;
-    background-position: center !important;
-    background-size: cover !important;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-  
-  .twit{
-      color: #fff;
-      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-      font-size: 150%;
-      font-weight: bold;
-  }
-  
-  .twit:hover {
-  }
-  
-  #episodes-list{
-      padding: 5% 0px;
-      color: #fff;
-  }
-  
-  #episodes-list h1{
-      padding-bottom: 2%;
-  }
-</style>
 {% endblock %}

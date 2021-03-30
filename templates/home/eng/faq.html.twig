@@ -1,0 +1,66 @@
+{% extends 'baseeng.html.twig' %}
+
+{% block title %}FAQ - Nations Sounds{% endblock %}
+
+{% block body %}
+<style>
+
+</style>
+</head>
+<body>
+
+<div id="faq">
+          <h1><img src="/img/icon/faq.png"/>FAQ</h1>
+          <div class="box">
+                <button class="accordion">How can I eat?</button>
+                    <div class="panel">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+          </div>
+
+    <div class="box">
+      <button class="accordion">Where can I sleep nearby?</button>
+      <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+    </div>
+
+    <div class="box">
+      <button class="accordion">How can I find my e-ticket?</button>
+      <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+    </div>
+
+    <div class="box">
+      <button class="accordion">What are the festival hours?</button>
+      <div class="panel">
+        <p>The festival lasts for three days and is open from 10 a.m. to 12 a.m. Friday through Sunday evening.
+         The schedules are continuous all day and distributed according to the 5 stages of the festival.</p>
+      </div>
+    </div>
+</div>
+
+
+<div id="background-icon">
+</div>
+
+
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+{% endblock %}

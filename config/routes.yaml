@@ -26,6 +26,14 @@ a_propos:
     path:     fr/a-propos
     controller: App\Controller\HomeController::propos
 
+mentions:
+    path:     fr/mentions-légales
+    controller: App\Controller\HomeController::mentions
+
+politique:
+    path:     fr/politique-de-confidentialité
+    controller: App\Controller\HomeController::politique
+
 programme:
     path:     fr/programme
     controller: App\Controller\HomeController::program
@@ -35,13 +43,11 @@ artist_index:
     path:     fr/artistes
     controller: App\Controller\ArtistController::index
 
+
 artist_show:
     path:     fr/artistes/{name}
     controller: App\Controller\ArtistController::show
 
-artist_showeng:
-    path:     eng/artists/{name}
-    controller: App\Controller\ArtistController::showeng
 
 artist_new:
     path:     artistes/new
@@ -53,6 +59,10 @@ scene_index:
     path:     fr/scenes
     controller: App\Controller\SceneController::index
 
+scene_indexeng:
+    path:     eng/stages
+    controller: App\Controller\SceneController::indexeng
+
 scene_new:
     path:     fr/scenes/new
     controller: App\Controller\SceneController::new
@@ -61,6 +71,11 @@ scene_show:
     path:     fr/scenes/{name}
     controller: App\Controller\SceneController::show
 
+scene_showeng:
+    path:     eng/stages/{name}
+    controller: App\Controller\SceneController::showeng
+
+
 scene_edit:
     path:     fr/scenes/{name}/edit
     controller: App\Controller\SceneController::edit
@@ -68,6 +83,90 @@ scene_edit:
 scene_delete:
     path:     fr/scenes/{name}/delete
     controller: App\Controller\SceneController::delete    
+
+
+alert_index:
+    path:     fr/alertes
+    controller: App\Controller\AlertController::index    
+
+alert_new:
+    path:     fr/alertes/new
+    controller: App\Controller\AlertController::new   
+    
+alert_show:
+    path:     fr/alertes/{titre}
+    controller: App\Controller\AlertController::show 
+
+alert_edit:
+    path:     fr/alertes/{titre}/edit
+    controller: App\Controller\AlertController::edit
+
+alert_delete:
+    path:     fr/alertes/{titre}/delete
+    controller: App\Controller\AlertController::delete
+
+
+partenaire:
+    path:     fr/partenaires
+    controller: App\Controller\PartnerController::index
+
+partenaireeng:
+    path:     eng/partners
+    controller: App\Controller\PartnerController::indexeng
+
+
+
+
+
+
+
+
+
+indexeng:
+    path:     eng/
+    controller: App\Controller\HomeController::indexeng
+
+programmeeng:
+    path:     eng/program
+    controller: App\Controller\HomeController::programeng
+
+mentionseng:
+    path:     eng/legal-notice
+    controller: App\Controller\HomeController::mentionseng
+
+politiqueeng:
+    path:     eng/privacy-policy
+    controller: App\Controller\HomeController::politiqueeng
+
+faqeng:
+    path:     eng/faq
+    controller: App\Controller\HomeController::faqeng
+    
+a_proposeng:
+    path:     eng/about-us
+    controller: App\Controller\HomeController::proposeng
+
+
+artist_indexeng:
+    path:     eng/artists
+    controller: App\Controller\ArtistController::indexeng
+
+
+artist_showeng:
+    path:     eng/artists/{name}
+    controller: App\Controller\ArtistController::showeng
+
+
+alert_indexeng:
+    path:     eng/alerts
+    controller: App\Controller\AlertController::indexeng   
+
+
+    
+alert_showeng:
+    path:     /eng/alerts/{titre}/
+    controller: App\Controller\AlertController::showeng
+
 
 
 

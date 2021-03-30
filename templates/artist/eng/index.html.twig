@@ -1,0 +1,14 @@
+{% extends 'baseeng.html.twig' %}
+
+{% block title %}Artists - Nation Sounds{% endblock %}
+
+{% block body %}
+
+    <div style="background-color: #4463EB; margin: 10px; display: flex; padding: 40px 20px; flex-wrap: wrap; font-size: 24px; justify-content: center; border-radius: 10px;">
+    {% for artist in artists %}
+        <aside style="margin:20px 40px;">
+                <a href="{{ path('artist_showeng', {'name': artist.name}) }}" style="color: #FECC00; text-decoration: none; font-weight: bold;"><p style="text-align: center;">{{ artist.name }}</p></a>
+        </aside>
+    {% endfor %}
+    </div>
+{% endblock %}

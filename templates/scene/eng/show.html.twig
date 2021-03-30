@@ -1,0 +1,21 @@
+{% extends 'sceneeng.html.twig' %}
+
+{% block title %}{{ scene.nameeng }} - Nation Sounds{% endblock %}
+
+{% block body %}
+
+        <div id="background-slider" style="background-image: url({{ scene.background }});">
+                <h1>{{ scene.nameeng }}</h1>
+        </div>
+
+        <div id="flex-artist-show">
+                <div class="artist-show-image">
+                    <img src="{{ scene.picture }}" style=""/>
+                </div>
+
+
+                <div class="artist-show-text">
+                                <p>{{ scene.descriptioneng }}</p>
+                </div>
+        </div>
+{% endblock %}

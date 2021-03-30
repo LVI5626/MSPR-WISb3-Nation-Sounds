@@ -35,7 +35,29 @@ class SceneController extends AbstractController
         ]);
     }
 
-    public function new(Request $request, AlertRepository $alertRepository): Response
+
+    /**
+     * 
+     * Require ROLE_USER for only this controller method.
+     *
+     * @IsGranted("ROLE_USER")
+     */
+    public function indexeng(SceneRepository $sceneRepository, PartnerRepository $partnerRepository, AlertRepository $alertRepository): Response
+    {
+        return $this->render('scene/eng/index.html.twig', [
+            'scenes' => $sceneRepository->findAll(),
+            'partners' => $partnerRepository->findAll(),
+            'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
+            
+        ]);
+    }
+    /**
+     * 
+     * Require ROLE_ADMIN for only this controller method.
+     *
+     * @IsGranted("ROLE_ADMIN")
+     */
+    public function new(Request $request, PartnerRepository $partnerRepository,AlertRepository $alertRepository): Response
     {
         $scene = new Scene();
         $form = $this->createForm(SceneType::class, $scene);
@@ -52,11 +74,17 @@ class SceneController extends AbstractController
         return $this->render('scene/new.html.twig', [
             'scene' => $scene,
             'form' => $form->createView(),
+            'partners' => $partnerRepository->findAll(),
             'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
         ]);
     }
 
-
+    /**
+     * 
+     * Require ROLE_USER for only this controller method.
+     *
+     * @IsGranted("ROLE_USER")
+     */
     public function show(Scene $scene, PartnerRepository $partnerRepository, ArtistRepository $artistRepository, AlertRepository $alertRepository): Response
     {
         $partner = $partnerRepository->findAll();
@@ -70,7 +98,31 @@ class SceneController extends AbstractController
         ]);
     }
 
+    /**
+     * 
+     * Require ROLE_USER for only this controller method.
+     *
+     * @IsGranted("ROLE_USER")
+     */
+    public function showeng(Scene $scene, PartnerRepository $partnerRepository, ArtistRepository $artistRepository, AlertRepository $alertRepository): Response
+    {
+        $partner = $partnerRepository->findAll();
+        //$artists = $artist->findAll();
+        $artists = $artistRepository;
+        return $this->render('scene/eng/show.html.twig', [
+            'scene' => $scene,
+            'artists' => $artists,
+            'partners' => $partnerRepository->findAll(),
+            'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
+        ]);
+    }
 
+    /**
+     * 
+     * Require ROLE_ADMIN for only this controller method.
+     *
+     * @IsGranted("ROLE_ADMIN")
+     */
     public function edit(Request $request, Scene $scene, PartnerRepository $partnerRepository, AlertRepository $alertRepository): Response
     {
         $form = $this->createForm(SceneType::class, $scene);
@@ -90,7 +142,12 @@ class SceneController extends AbstractController
         ]);
     }
 
-
+    /**
+     * 
+     * Require ROLE_ADMIN for only this controller method.
+     *
+     * @IsGranted("ROLE_ADMIN")
+     */
     public function delete(Request $request, Scene $scene, AlertRepository $alertRepository): Response
     {
         if ($this->isCsrfTokenValid('delete'.$scene->getId(), $request->request->get('_token'))) {

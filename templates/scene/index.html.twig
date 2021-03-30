@@ -1,41 +1,18 @@
 {% extends 'scene.html.twig' %}
 
-{% block title %}Scene index{% endblock %}
+{% block title %}Nos scènes - Nations Sounds{% endblock %}
 
 {% block body %}
-    <h1>Scene index</h1>
+<div id="title">
+    <h1><img src="/img/icon/music.png"/>Les scènes</h1>
+</div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Picture</th>
-                <th>Background</th>
-                <th>Description</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+
         {% for scene in scenes %}
-            <tr>
-                <td>{{ scene.id }}</td>
-                <td>{{ scene.name }}</td>
-                <td>{{ scene.picture }}</td>
-                <td>{{ scene.background }}</td>
-                <td>{{ scene.description }}</td>
-                <td>
-                    <a href="{{ path('scene_show', {'name': scene.name}) }}">show</a>
-                    <a href="{{ path('scene_edit', {'name': scene.name}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+                <div class="background-scene" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(2, 2, 9, 0.5), rgba(2, 2, 9, 0.5)) ,url({{ scene.background }});" onclick="location.href='{{ path('scene_show', {'name': scene.name}) }}'">
+                <h1>{{ scene.name }}</h1>
+                </div>
 
-    <a href="{{ path('scene_new') }}">Create new</a>
+        {% endfor %}
+
 {% endblock %}

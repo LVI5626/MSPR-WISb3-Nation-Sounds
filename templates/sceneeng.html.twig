@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{% block title %}{% endblock %}</title>
+        <link  rel="stylesheet" href="/css/header.css">
+        <link  rel="stylesheet" href="/css/home.css">
+        <link  rel="stylesheet" href="/css/scenes.css">
+        <link  rel="stylesheet" href="/css/carousel/carousel.css">
+        <link  rel="stylesheet" href="/css/scene/scene.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+        <link rel="icon" type="image/png" href="/img/logos/head.jpg" />
+    </head>
+    <body>
+    <div class="main">
+    <div class="main2">
+            <div id="alert" style="">
+                {% for alert in news %}
+                    <a href="{{ path('alert_showeng', {'titre': alert.titre}) }}"><p><i class="fas fa-exclamation-triangle"></i> {{ alert.titreeng }}
+                    </p></a>
+                {% endfor %}
+            </div>
+
+    <header class="header-res">
+        <div class="channel-flex">
+        <div>
+
+        </div>
+        <div>
+            <a href="{{ path('indexeng') }}"><img src="/img/logos/nation_sounds.png"></a>
+        </div>
+                    <div class="language">
+        <p><a href="{{ path('index') }}">fr</a> / <a href="{{ path('indexeng') }}">eng</a></p>
+        </div>
+        </div>
+        <div class="icon-flex">
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">    
+            <li><a href="{{ path('programmeeng') }}">Program</a></li>
+            <li><a href="{{ path('scene_indexeng') }}">Stages</a></li>
+            <li><a href="{{ path('artist_indexeng') }}">Musicians</a></li>
+            <li><a href="{{ path('faqeng') }}">FAQ</a></li>
+            <li><a href="{{ path('a_proposeng') }}">About us</a></li>
+            <li><a href="{{ path('app_logout') }}">Logout</a></li>
+        </ul>
+        </div>
+
+    </header>
+
+
+
+        {% block body %}{% endblock %}
+             <div id="maps-home">
+                    <iframe src="https://www.google.com/maps/d/embed?mid=1Bjj62wd7HVXkdNwcgxg-Z7ZSE64LvjnP" width="640" height="480" style=""></iframe>
+            </div>
+            <div class="carousel-slider" id="responsive">
+                    <h1><img src="/img/icon/partenaires.png"/>Nos partenaires</h1>
+                        <div class="carousel-content" data-grid='{"xl":3,"lg":3,"md":2,"sm":2}' data-pagination="true">
+
+                            {% for partner in partners %}
+                                <aside class="slide-item" style="">
+                                        <img src="{{ partner.picture }}"/><p>
+                                        <p>{{ partner.name }}</p>
+                                </aside>
+                            {% endfor %}
+                        </div>
+                    <button class="carousel-prev-btn"><</button>
+                    <button class="carousel-next-btn">></button>
+                        <div class="carousel-pagination"></div>
+                        <div class="button-link-partners" onclick="location.href='/partner';">
+                                Voir nos partenaires
+                        </div>  
+            </div>
+            <footer>
+                <div class="footer-flex">
+                    <div class="footer-left">            
+                        <ul>
+                            <li><a href="{{ path('mentionseng') }}">Legal notice</a></li>
+                            <li><a href="{{ path('politiqueeng') }}">Privacy policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-right">
+                        <a href="#"> <img src="/img/socials/facebook.png"></a>
+                        <a href="#"> <img src="/img/socials/twitter.png"></a>
+                        <a href="#"> <img src="/img/socials/insta.png"></a>
+                        <a href="#"> <img src="/img/socials/snapchat.png"></a>
+                        <a href="#"> <img src="/img/socials/youtube.png"></a>
+                        <a href="#"> <img src="/img/socials/linkedin.png"></a>
+                    </div>
+                </div>
+            </footer>
+            </div>
+            </div>
+            <div id="footer-under">
+            <p>© NATIONS SOUNDS 2021</p>
+            </div>
+        {% block javascripts %}{% endblock %}
+
+<script>
+let carousel = (el, parameter) => {
+    el = el !==undefined ? el : "";
+    parameter = parameter !== undefined ? parameter : {};
+    let method = {
+        transition: parameter.transition !== undefined ? parameter.transition : null,
+        responsive: parameter.grid !== undefined ? parameter.grid : null,
+        pagination: parameter.pagination !== undefined ? parameter.pagination : false,
+        autoplay: parameter.autoplay !== undefined ? parameter.autoplay : null,
+        playTimer: parameter.autoplay !== undefined && parameter.autoplay.playTimer !== undefined
+            ? parameter.autoplay.playTimer
+            : 2000,
+    },trigger = document.querySelectorAll(".carousel-slider"+el);
+    Array.prototype.forEach.call(trigger, function (el) {
+        
+    let content = el.querySelector (".carousel-content"),
+        count = content.childElementCount,
+        responsive = method.responsive || JSON.parse (content.getAttribute ("data-grid")),
+        widths,
+        d_widths = el.offsetWidth,
+        c_widths = d_widths * count,
+        autoplay = method.autoplay || el.getAttribute ("data-autoplay"),
+        autoplay_timer = method.playTimer || el.getAttribute ("data-timer"),
+        is_pagination = method.pagination || content.getAttribute ("data-pagination"),
+        config = {
+            "lg": 1024,
+            "md": 768,
+            "sm": 667
+        },
+        step,
+        pagination_content = el.querySelector (".carousel-pagination");
+
+    content.firstElementChild.classList.add ("active");
+    content.style.transitionDuration = method.transition || "500ms";
+    this.autoplayEffect = null;
+
+    let index_settings = () => {//tabindexleri slide itemlerine aktarıyoruz
+        let slides = content.querySelectorAll (".slide-item");
+        for (i in slides) {
+            slides[ i ].tabIndex = i;
+        }
+    }, size = (widths) => {
+        let item_resize = el.querySelectorAll (".slide-item");
+        Array.prototype.forEach.call (item_resize, (item_size) => {
+            item_size.style.width = widths + "px";
+        });
+    }, responsive_grid = () => {
+        if (responsive) {
+            if (window.innerWidth >= config.lg) {
+                if (responsive.xl !== undefined) {
+                    gridCount = responsive.xl;
+                    widths = Number (d_widths) / Number (gridCount);
+                }
+            } else if (window.innerWidth >= config.md) {
+                if (responsive.lg !== undefined) {
+                    gridCount = responsive.lg;
+                    widths = Number (d_widths) / Number (gridCount);
+                    console.log (d_widths, gridCount, responsive)
+                }
+            } else if (window.innerWidth >= config.sm) {
+                if (responsive.md !== undefined) {
+                    gridCount = responsive.md;
+                    widths = Number (d_widths) / Number (gridCount);
+                }
+            } else if (window.innerWidth < config.sm) {
+                if (responsive.sm !== undefined) {
+                    gridCount = responsive.sm;
+                    widths = Number (d_widths) / Number (gridCount);
+                }
+            }
+        } else {
+            widths = d_widths;
+        }
+        size (widths);
+        c_widths = widths * content.lastElementChild.tabIndex;
+        content.style.minWidth = c_widths;
+        return widths;
+    };
+
+    let autoplay_ = () => {
+        if (autoplay) {
+            let i = 0;
+            let last_i = content.lastElementChild.tabIndex;
+            this.autoplayEffect = setInterval (() => {
+                if (last_i > i) {
+                    content.style.transform = "translate3d(-" + d_widths * i + "px,0px,0px)";
+                    content.children.item (i + 1).classList.add ("active");
+                    content.children.item (i).classList.remove ("active");
+                } else {
+                    content.lastElementChild.classList.remove ("active");
+                    content.firstElementChild.classList.add ("active");
+                    content.style.transform = "translate3d(" + 0 + "px,0px,0px)";
+
+                    i = 0;
+                }
+                i++;
+            }, Number (autoplay_timer));
+        }
+    }, pagination = () => {
+        if (is_pagination) {
+            let pagination_item = el.querySelector (".carousel-pagination");
+            for (let i = 0; i < count; i++) {
+                let p_item = document.createElement ("a");
+                p_item.href = "#!";
+                p_item.classList.add ("item");
+                p_item.tabIndex = i;
+                pagination_item.appendChild (p_item);
+            }
+        }
+    }, slider_next = (el) => {
+        let content = el.querySelector (".carousel-content");
+        let last_i = content.lastElementChild.tabIndex;
+        let i = content.querySelector (".slide-item.active").tabIndex + 1;
+        step = d_widths / responsive_grid ();
+        widths = d_widths / step;
+        if (step > 1) {
+            last_i = last_i - step + 1;
+        }
+        if (i <= last_i) {
+            content.children.item (i).classList.add ("active");
+            content.children.item (i - 1).classList.remove ("active");
+            let ml_ = widths * i;
+            content.style.transform = "translate3d(-" + ml_ + "px,0px,0px)";
+            i++;
+        } else {
+            i = 1;
+            content.lastElementChild.classList.remove ("active");
+            content.firstElementChild.classList.add ("active");
+            content.style.transform = "translate3d(" + 0 + "px,0px,0px)";
+        }
+    }, slider_prev = () => {
+        let content = el.querySelector (".carousel-content");
+        let last_i = content.lastElementChild.tabIndex;
+        let i = content.querySelector (".slide-item.active").tabIndex;
+        step = d_widths / responsive_grid ();
+        widths = d_widths / step;
+        if (i >= 1) {
+            content.children.item (i - 1).classList.add ("active");
+            content.children.item (i).classList.remove ("active");
+            i--;
+            let ml_ = widths * i;
+            content.style.transform = "translate3d(-" + ml_ + "px,0px,0px)";
+        } else {
+            i = last_i;
+            content.lastElementChild.classList.add ("active");
+            content.firstElementChild.classList.remove ("active");
+            if (step > 1) {
+                last_i = last_i - step + 1;
+            }
+            let ml_ = widths * ( last_i - 1 );
+            content.style.transform = "translate3d(-" + ml_ + "px,0px,0px)";
+            i--;
+        }
+
+    }, slider_direction = (el) => {
+        let prev = el.querySelector (".carousel-prev-btn");
+        let next = el.querySelector (".carousel-next-btn");
+        if (el.contains (prev) && el.contains (next)) {
+            prev.addEventListener ("click", () => {
+                window.clearInterval (this.autoplayEffect);
+                slider_prev (el);
+            }, false);
+
+            next.addEventListener ("click", () => {
+                window.clearInterval (this.autoplayEffect);
+                slider_next (el);
+            }, false);
+        }
+        if (el.contains (pagination_content)) {
+            pagination ();
+            let paginate = pagination_content.querySelectorAll (".item");
+            Array.prototype.forEach.call (paginate, (el) => {
+                el.addEventListener ("click", () => {
+                    window.clearInterval (this.autoplayEffect);
+                    let last_i = el.parentNode.lastChild.tabIndex,
+                        i = el.tabIndex;
+                    let ml_ = widths * i;
+                    content.style.transform = "translate3d(-" + ml_ + "px,0px,0px)";
+                }, false);
+            });
+        }
+    };
+    window.addEventListener ("resize", () => {
+        d_widths = el.offsetWidth;
+        console.log ("ekran değişti", d_widths);
+        responsive_grid ();
+    }, true);
+    responsive_grid ();
+    slider_direction (el);
+    autoplay_ ();
+    index_settings ();
+
+    });
+
+    return this;
+};
+
+carousel();
+
+</script>    
+    </body>
+</html>

@@ -15,14 +15,12 @@ use App\Repository\SceneRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
-/**
- * @Route("/alert")
- */
+
+
+
 class AlertController extends AbstractController
 {
-    /**
-     * @Route("/", name="alert_index", methods={"GET"})
-     */
+
     public function index(AlertRepository $alertRepository, ArtistRepository $artistRepository, PartnerRepository $partnerRepository, SceneRepository $sceneRepository): Response
     {
         return $this->render('alert/index.html.twig', [
@@ -31,6 +29,19 @@ class AlertController extends AbstractController
             'scenes' => $sceneRepository->findAll(),
             'artists' => $artistRepository->findBy([],['name'=>'ASC']),
             'show1' => $artistRepository->findBy(['date'=>'Vendredi', 'scene' => '1'],['hour'=>'ASC']),
+            'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
+        ]);
+    }
+
+    public function indexeng(AlertRepository $alertRepository, ArtistRepository $artistRepository, PartnerRepository $partnerRepository, SceneRepository $sceneRepository): Response
+    {
+        return $this->render('alert/indexeng.html.twig', [
+            'alerts' => $alertRepository->findAll(),
+            'partners' => $partnerRepository->findAll(),
+            'scenes' => $sceneRepository->findAll(),
+            'artists' => $artistRepository->findBy([],['name'=>'ASC']),
+            'show1' => $artistRepository->findBy(['date'=>'Vendredi', 'scene' => '1'],['hour'=>'ASC']),
+            'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
         ]);
     }
 
@@ -59,19 +70,39 @@ class AlertController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="alert_show", methods={"GET"})
+     * 
+     * Require ROLE_USER for only this controller method.
+     *
+     * @IsGranted("ROLE_USER")
      */
-    public function show(Alert $alert, PartnerRepository $partnerRepository): Response
+    public function show(Alert $alert, PartnerRepository $partnerRepository, AlertRepository $alertRepository): Response
     {
         return $this->render('alert/show.html.twig', [
             'alert' => $alert,
             'partners' => $partnerRepository->findAll(),
-
+            'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
+        ]);
+    }
+    /**
+     * 
+     * Require ROLE_USER for only this controller method.
+     *
+     * @IsGranted("ROLE_USER")
+     */
+    public function showeng(Alert $alert, PartnerRepository $partnerRepository, AlertRepository $alertRepository): Response
+    {
+        return $this->render('alert/showeng.html.twig', [
+            'alert' => $alert,
+            'partners' => $partnerRepository->findAll(),
+            'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
         ]);
     }
 
     /**
-     * @Route("/{id}/edit", name="alert_edit", methods={"GET","POST"})
+     * 
+     * Require ROLE_ADMIN for only this controller method.
+     *
+     * @IsGranted("ROLE_ADMIN")
      */
     public function edit(Request $request, Alert $alert, PartnerRepository $partnerRepository): Response
     {
@@ -93,7 +124,10 @@ class AlertController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="alert_delete", methods={"POST"})
+     * 
+     * Require ROLE_ADMIN for only this controller method.
+     *
+     * @IsGranted("ROLE_ADMIN")
      */
     public function delete(Request $request, Alert $alert): Response
     {

@@ -36,11 +36,14 @@
     </form>
 </form>
     {% if app.user %}
-        <div class="mb-3">
+        <div class="message">
             Vous êtes déjà connecté au nom de : {{ app.user.username }}, <a href="{{ path('app_logout') }}">Vous déconnecter</a>
         </div>
+    {% else %}
+        <div class="message">
+            <p>Pas encore de compte ? <a href="/register">Inscrivez-vous</a></p>
+        </div>
     {% endif %}
-<p>Pas encore de compte ? <a href="/register">Inscrivez-vous</a></p>
 </div>
 
 <style>
@@ -52,7 +55,6 @@
 }
 
 #title .alert .alert-danger{
-    color: red;
     font-size: 12px;
     font-family: Comfortaa
 }
@@ -66,6 +68,7 @@
 .connection{
     text-transform:uppercase;
     font-size: 36px;
+        font-family: "Hero";
 }
 
 #background{
@@ -73,11 +76,15 @@
     margin: 10px;
     border-radius: 10px;
     padding: 20px;
-    font-family: "Hero";
     background-image: url("/img/peoples/login.png");
     background-repeat: no-repeat;
     background-position: bottom right;
     background-size: 200px;
+}
+
+.message, .message a{
+    color: #fff;
+    padding:20px 0px;
 }
 
 input{

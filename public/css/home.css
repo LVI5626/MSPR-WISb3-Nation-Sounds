@@ -33,13 +33,24 @@
     border-radius: 5px 0px 1px 3px;
 }
 
+.carousel-content .active:after {
+    content: none;
+}
+
+
 
 
 
 #maps-home{
-    background-color: pink;
-    height: 150px;
+    margin: 0px 10px;
+
 }
+
+#maps-home iframe{
+    border-radius: 10px;
+    width: 100%;
+}
+
 
 
 .principal_news_flex{

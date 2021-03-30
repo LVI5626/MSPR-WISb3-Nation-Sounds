@@ -1,0 +1,65 @@
+{% extends 'partnereng.html.twig' %}
+
+{% block title %}Our partners - Nations Sounds{% endblock %}
+
+{% block body %}
+    <div id="title">
+        <h1><img src="/img/icon/partenaires.png"/>Our partners</h1>
+    </div>
+
+<div class="twit-title">
+    <h1>Radios</h1>
+</div>
+<main class="twit-container">
+        {% for partner in radio %}
+            <article class="twit">
+                <div class="twit-content">
+                    <p class="twit-text"><img src="{{ partner.picture }}"/></p>
+                    <p>{{ partner.name }}</p>   
+                </div>
+            </article>
+        {% endfor %}
+</main>
+
+<div class="twit-title">
+    <h1>Newspapers</h1>
+</div>
+<main class="twit-container">
+        {% for partner in journal %}
+            <article class="twit">
+                <div class="twit-content">
+                    <p class="twit-text"><img src="{{ partner.picture }}"/></p>
+                    <p>{{ partner.name }}</p>   
+                </div>
+            </article>
+        {% endfor %}
+</main>
+
+<div class="twit-title">
+    <h1>Drinks</h1>
+</div>
+<main class="twit-container">
+        {% for partner in boisson %}
+            <article class="twit">
+                <div class="twit-content">
+                    <p class="twit-text"><img src="{{ partner.picture }}"/></p>
+                    <p>{{ partner.name }}</p>   
+                </div>
+            </article>
+        {% endfor %}
+</main>
+
+<div class="twit-title">
+    <h1>TV Channels</h1>
+</div>
+<main class="twit-container">
+        {% for partner in chaîne %}
+            <article class="twit">
+                <div class="twit-content">
+                    <p class="twit-text"><img src="{{ partner.picture }}"/></p>
+                    <p>{{ partner.name }}</p>   
+                </div>
+            </article>
+        {% endfor %}
+</main>
+{% endblock %}

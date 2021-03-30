@@ -1,0 +1,18 @@
+{% extends 'sceneeng.html.twig' %}
+
+{% block title %}Stages - Nations Sounds{% endblock %}
+
+{% block body %}
+<div id="title">
+    <h1><img src="/img/icon/music.png"/>Stages</h1>
+</div>
+
+
+        {% for scene in scenes %}
+                <div class="background-scene" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(2, 2, 9, 0.5), rgba(2, 2, 9, 0.5)) ,url({{ scene.background }});" onclick="location.href='{{ path('scene_showeng', {'name': scene.name}) }}'">
+                <h1>{{ scene.nameeng }}</h1>
+                </div>
+
+        {% endfor %}
+
+{% endblock %}
