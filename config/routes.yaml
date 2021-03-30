@@ -122,7 +122,13 @@ politiqueeng:
     path:     eng/privacy-policy
     controller: App\Controller\HomeController::politiqueeng
 
-
+faqeng:
+    path:     eng/faq
+    controller: App\Controller\HomeController::faqeng
+    
+a_proposeng:
+    path:     eng/about-us
+    controller: App\Controller\HomeController::proposeng
 
 
 artist_indexeng:

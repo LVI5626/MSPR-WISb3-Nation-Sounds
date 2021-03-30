@@ -34,3 +34,147 @@
 .tickets-background img{
     margin-bottom: 20px;
 }
+
+
+@font-face
+{
+    font-family: "Hero";
+    src: url("/police/My-Happy-Ending.ttf");
+}
+
+.accordion {
+  background-color: #F72585;
+  color: #fff;
+  cursor: pointer;
+  padding: 0px 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 25px;
+  font-weight: bold;
+  transition: 0.4s;
+  border-radius: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+}
+
+
+button.accordion.active{
+  border-radius: 10px 10px 0px 0px !important;
+}
+.panel {
+  padding: 0 18px;
+  background-color: #F72585;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  color: #fff;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.panel p{
+  padding: 20px 0px;
+  width: 80%;
+}
+
+#faq{
+  margin: 10px;
+}
+
+.box{
+  margin:20px 0px;
+}
+#background{
+    padding: 20px;
+    background-color: #4463EB;
+    color: #fff;
+    border-radius: 10px;
+}
+#background-icon{
+    height: 200px;
+    padding: 20px;
+    background-image: url("/img/peoples/faq.png");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 200px;
+}
+
+#background-about{
+    padding: 20px;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(2, 2, 9, 0.5), rgba(2, 2, 9, 0.5)) ,url("/img/scenes/festival music.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    border-radius: 10px;
+    text-align: justify;
+    text-align-last: center;
+}
+
+#background-about p{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    padding:20px 0px;
+}
+
+#faq h1{
+    text-align: center;
+    font-family: "Hero";
+    padding: 20px 0px;
+    font-size: 26px;
+    color: #4463EB;
+    text-transform: uppercase;
+    font-size: 35px;
+    font-family: "Hero";
+    display: flex;
+    margin-left: 2%;
+}
+#faq h1 img {
+    width: 30px;
+    margin: 0px 20px;
+    align-items: flex-end;
+}
+
+
+.parragraf{
+    padding: 20px 0px;
+    width:90%;
+  }
+  
+  .parragraf h3{
+    padding: 5px 0px;
+    font-size: 24px;
+  }
+
+
+@media (max-width: 650px){
+.accordion {
+    font-size: 18px;
+}
+
+#background-about p{
+    width: 80%;
+}
+.parragraf h3{
+    font-size: 18px;
+  }
+
+}
+
+
+@media (max-width: 400px){
+.accordion {
+    font-size: 14px;
+    height: 50px;
+}
+
+.accordion:after {
+    font-size: 30px;
+}
+
+}
+

@@ -75,12 +75,44 @@ class HomeController extends AbstractController
         ]);
     }
 
-        /**
-     * @Route("/a-propos", name="a-propos")
-     */
+         /**
+          * Require ROLE_USER for only this controller method.
+          *
+          * @IsGranted("ROLE_USER")
+          */
+
+          public function faqeng(ArtistRepository $artistRepository, PartnerRepository $partnerRepository, AlertRepository $alertRepository): Response
+          {
+              return $this->render('home/eng/faq.html.twig', [
+                  'controller_name' => 'HomeController',
+                  'partners' => $partnerRepository->findAll(),
+                  'artists' => $artistRepository->findAll(),
+                  'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
+              ]);
+          }
+
+         /**
+          * Require ROLE_USER for only this controller method.
+          *
+          * @IsGranted("ROLE_USER")
+          */
     public function propos(ArtistRepository $artistRepository, PartnerRepository $partnerRepository, AlertRepository $alertRepository): Response
     {
         return $this->render('home/a_propos.html.twig', [
+            'controller_name' => 'HomeController',
+            'partners' => $partnerRepository->findAll(),
+            'artists' => $artistRepository->findAll(),
+            'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
+        ]);
+    }
+         /**
+          * Require ROLE_USER for only this controller method.
+          *
+          * @IsGranted("ROLE_USER")
+          */
+    public function proposeng(ArtistRepository $artistRepository, PartnerRepository $partnerRepository, AlertRepository $alertRepository): Response
+    {
+        return $this->render('home/eng/a_propos.html.twig', [
             'controller_name' => 'HomeController',
             'partners' => $partnerRepository->findAll(),
             'artists' => $artistRepository->findAll(),
