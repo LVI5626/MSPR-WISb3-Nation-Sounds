@@ -34,6 +34,23 @@ class SceneController extends AbstractController
             
         ]);
     }
+
+
+    /**
+     * 
+     * Require ROLE_USER for only this controller method.
+     *
+     * @IsGranted("ROLE_USER")
+     */
+    public function indexeng(SceneRepository $sceneRepository, PartnerRepository $partnerRepository, AlertRepository $alertRepository): Response
+    {
+        return $this->render('scene/eng/index.html.twig', [
+            'scenes' => $sceneRepository->findAll(),
+            'partners' => $partnerRepository->findAll(),
+            'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
+            
+        ]);
+    }
     /**
      * 
      * Require ROLE_ADMIN for only this controller method.

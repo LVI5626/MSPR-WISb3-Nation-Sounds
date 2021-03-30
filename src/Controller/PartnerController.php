@@ -19,7 +19,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 class PartnerController extends AbstractController
 {
     /**
-     * @Route("/", name="partner_index", methods={"GET"})
      * 
      * Require ROLE_USER for only this controller method.
      *
@@ -37,11 +36,28 @@ class PartnerController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="partner_new", methods={"GET","POST"})
      * 
      * Require ROLE_USER for only this controller method.
      *
      * @IsGranted("ROLE_USER")
+     */
+    public function indexeng(PartnerRepository $partnerRepository, AlertRepository $alertRepository ): Response
+    {
+        return $this->render('partner/indexeng.html.twig', [
+            'radio' => $partnerRepository->findBy(['theme'=>'Radio']),
+            'journal' => $partnerRepository->findBy(['theme'=>'Journal']),
+            'chaîne' => $partnerRepository->findBy(['theme'=>'Chaîne']),
+            'boisson' => $partnerRepository->findBy(['theme'=>'Boisson']),
+            'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
+        ]);
+    }
+
+    /**
+     * @Route("/new", name="partner_new", methods={"GET","POST"})
+     * 
+     * Require ROLE_ADMIN for only this controller method.
+     *
+     * @IsGranted("ROLE_ADMIN")
      */
     public function new(Request $request, AlertRepository $alertRepository): Response
     {
@@ -82,9 +98,9 @@ class PartnerController extends AbstractController
     /**
      * @Route("/{id}/edit", name="partner_edit", methods={"GET","POST"})
      * 
-     * Require ROLE_USER for only this controller method.
+     * Require ROLE_ADMIN for only this controller method.
      *
-     * @IsGranted("ROLE_USER")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function edit(Request $request, Partner $partner, AlertRepository $alertRepository): Response
     {
@@ -107,7 +123,7 @@ class PartnerController extends AbstractController
     /**
      * @Route("/{id}", name="partner_delete", methods={"DELETE"})
      * 
-     * Require ROLE_USER for only this controller method.
+     * Require ROLE_ADMIN for only this controller method.
      *
      * @IsGranted("ROLE_USER")
      */

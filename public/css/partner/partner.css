@@ -1,0 +1,104 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+@font-face
+{
+    font-family: "Hero";
+    src: url("/police/My-Happy-Ending.ttf");
+}
+
+#title h1{
+  text-align: center;
+  font-family: "Hero";
+  padding: 20px 0px;
+  font-size: 26px;
+  color: #4463EB;
+  text-transform: uppercase;
+  font-size: 35px;
+  font-family: "Hero";
+  display: flex;
+  margin-left: 2%;
+}
+
+#title h1 img {
+  width: 30px;
+  margin: 0px 20px;
+  align-items: flex-end;
+}
+
+
+.twit img{
+  width: 150px;
+  margin: auto;
+}
+
+.twit-container {
+display: flex;
+flex-wrap: wrap;
+padding: 40px 5px;
+margin: -10px 0 0 -10px;
+position: relative;
+justify-content: space-around;
+}
+
+.twit {
+display: inline-block;
+padding: 20px;
+width: 30%;
+height: 150px;
+background-color: transparent;
+border-radius: 20px;
+display: flex;
+align-items: flex-end;
+margin: 3% 3%;
+background-position: center !important;
+background-size: cover !important;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+
+.twit{
+  color: #4463EB;
+  font-size: 150%;
+  font-weight: bold;
+}
+
+
+.twit-title h1{
+  text-align: center;
+  font-family: "Hero";
+  padding: 20px 0px;
+  font-size: 42px;
+  color: #4463EB;
+  text-transform: uppercase;
+}
+
+
+@media (max-width:650px){
+  .twit {
+    width: 70%;
+    padding: 10px;
+    margin: 0px;
+    margin-bottom: 5%;
+
+    }
+    
+    .twit-container {
+      padding: 00px 0px;
+      margin: -10px 0 0 -10px;
+      padding-bottom: 60px;
+  }
+
+  .twit-title h1{
+    padding: 10px 0px;
+    font-size: 32px;
+  }
+
+  .twit img{
+    width: 110px;
+    margin: auto;
+  }
+}
