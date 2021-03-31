@@ -47,6 +47,10 @@ class AlertController extends AbstractController
 
     /**
      * @Route("fr/alertes/new", name="alert_new", methods={"GET","POST"})
+     * 
+     * Require ROLE_ADMIN for only this controller method.
+     *
+     * @IsGranted("ROLE_ADMIN")
      */
     public function new(Request $request, PartnerRepository $partnerRepository, AlertRepository $alertRepository): Response
     {
