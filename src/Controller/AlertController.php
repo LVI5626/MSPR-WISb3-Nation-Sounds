@@ -20,7 +20,11 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class AlertController extends AbstractController
 {
-
+    /**
+     * Require ROLE_ADMIN for only this controller method.
+     *
+     * @IsGranted("ROLE_ADMIN")
+     */
     public function index(AlertRepository $alertRepository, ArtistRepository $artistRepository, PartnerRepository $partnerRepository, SceneRepository $sceneRepository): Response
     {
         return $this->render('alert/index.html.twig', [
@@ -33,6 +37,11 @@ class AlertController extends AbstractController
         ]);
     }
 
+    /**
+     * Require ROLE_ADMIN for only this controller method.
+     *
+     * @IsGranted("ROLE_ADMIN")
+     */
     public function indexeng(AlertRepository $alertRepository, ArtistRepository $artistRepository, PartnerRepository $partnerRepository, SceneRepository $sceneRepository): Response
     {
         return $this->render('alert/indexeng.html.twig', [
