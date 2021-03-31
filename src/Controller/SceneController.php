@@ -143,6 +143,7 @@ class SceneController extends AbstractController
     }
 
     /**
+     * @Route("fr/scenes/{name}", name="scene_delete", methods={"DELETE"})
      * 
      * Require ROLE_ADMIN for only this controller method.
      *

@@ -49,9 +49,9 @@ artist_show:
     controller: App\Controller\ArtistController::show
 
 
-artist_new:
-    path:     artistes/new
-    controller: App\Controller\ArtistController::new
+#artist_new:
+#    path:     fr/artistes/new
+#    controller: App\Controller\ArtistController::new
 
 
 
@@ -79,10 +79,7 @@ scene_showeng:
 scene_edit:
     path:     fr/scenes/{name}/edit
     controller: App\Controller\SceneController::edit
-
-scene_delete:
-    path:     fr/scenes/{name}/delete
-    controller: App\Controller\SceneController::delete    
+ 
 
 
 alert_index:
@@ -106,7 +103,7 @@ alert_delete:
     controller: App\Controller\AlertController::delete
 
 
-partenaire:
+partner_index:
     path:     fr/partenaires
     controller: App\Controller\PartnerController::index
 

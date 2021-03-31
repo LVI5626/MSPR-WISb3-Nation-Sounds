@@ -27,8 +27,8 @@
                 <td>{{ alert.photo }}</td>
                 <td>{{ alert.photo2 }}</td>
                 <td>
-                    <a href="{{ path('alert_show', {'id': alert.id}) }}">show</a>
-                    <a href="{{ path('alert_edit', {'id': alert.id}) }}">edit</a>
+                    <a href="{{ path('alert_show', {'titre': alert.titre}) }}">show</a>
+                    <a href="{{ path('alert_edit', {'titre': alert.titre}) }}">edit</a>
                 </td>
             </tr>
         {% else %}

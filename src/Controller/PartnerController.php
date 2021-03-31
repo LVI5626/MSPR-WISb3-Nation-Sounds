@@ -13,9 +13,7 @@ use App\Repository\AlertRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
-/**
- * @Route("/partner")
- */
+
 class PartnerController extends AbstractController
 {
     /**
@@ -53,7 +51,7 @@ class PartnerController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="partner_new", methods={"GET","POST"})
+     * @Route("fr/partenaires/new", name="partner_new", methods={"GET","POST"})
      * 
      * Require ROLE_ADMIN for only this controller method.
      *
@@ -81,7 +79,7 @@ class PartnerController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="partner_show", methods={"GET"})
+     * @Route("fr/partenaires/{id}", name="partner_show", methods={"GET"})
      * 
      * Require ROLE_USER for only this controller method.
      *
@@ -96,7 +94,7 @@ class PartnerController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="partner_edit", methods={"GET","POST"})
+     * @Route("fr/partenaires/{id}/edit", name="partner_edit", methods={"GET","POST"})
      * 
      * Require ROLE_ADMIN for only this controller method.
      *
@@ -121,7 +119,7 @@ class PartnerController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="partner_delete", methods={"DELETE"})
+     * @Route("fr/partenaires/{id}", name="partner_delete", methods={"DELETE"})
      * 
      * Require ROLE_ADMIN for only this controller method.
      *

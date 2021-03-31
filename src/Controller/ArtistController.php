@@ -55,6 +55,8 @@ public function indexeng(ArtistRepository $artistRepository, PartnerRepository $
 
 
 /**
+    * @Route("fr/artistes/new", name="artistes_new", methods={"GET","POST"}) 
+    * 
     * Require ROLE_ADMIN for only this controller method.
     *
     * @IsGranted("ROLE_ADMIN")
@@ -112,7 +114,7 @@ public function indexeng(ArtistRepository $artistRepository, PartnerRepository $
     }
 
     /**
-     * @Route("artistes/{name}/edit", name="artist_edit", methods={"GET","POST"})
+     * @Route("fr/artistes/{name}/edit", name="artist_edit", methods={"GET","POST"})
      *
     * Require ROLE_ADMIN for only this controller method.
     *

@@ -23,6 +23,10 @@ class AlertType extends AbstractType
                 ])
             ->add('photo2', TextareaType::class, [
                 ])
+            ->add('titreeng', TextareaType::class, [
+                ])
+            ->add('photo2', TextareaType::class, [
+                ])
         ;
     }
 

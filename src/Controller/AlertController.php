@@ -46,9 +46,9 @@ class AlertController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="alert_new", methods={"GET","POST"})
+     * @Route("fr/alertes/new", name="alert_new", methods={"GET","POST"})
      */
-    public function new(Request $request, PartnerRepository $partnerRepository): Response
+    public function new(Request $request, PartnerRepository $partnerRepository, AlertRepository $alertRepository): Response
     {
         $alert = new Alert();
         $form = $this->createForm(AlertType::class, $alert);
@@ -66,6 +66,7 @@ class AlertController extends AbstractController
             'alert' => $alert,
             'form' => $form->createView(),
             'partners' => $partnerRepository->findAll(),
+            'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
         ]);
     }
 
@@ -104,7 +105,7 @@ class AlertController extends AbstractController
      *
      * @IsGranted("ROLE_ADMIN")
      */
-    public function edit(Request $request, Alert $alert, PartnerRepository $partnerRepository): Response
+    public function edit(Request $request, Alert $alert, PartnerRepository $partnerRepository, AlertRepository $alertRepository): Response
     {
         $form = $this->createForm(AlertType::class, $alert);
         $form->handleRequest($request);
@@ -119,7 +120,7 @@ class AlertController extends AbstractController
             'alert' => $alert,
             'form' => $form->createView(),
             'partners' => $partnerRepository->findAll(),
-
+            'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
         ]);
     }
 
