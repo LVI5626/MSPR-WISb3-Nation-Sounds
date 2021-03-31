@@ -32,7 +32,7 @@
             <a href="{{ path('index') }}"><img src="/img/logos/nation_sounds.png"></a>
         </div>
                     <div class="language">
-        <p><a href="#">fr</a> / <a href="#">eng</a></p>
+        <p><a href="{{ path('index') }}">fr</a> / <a href="{{ path('indexeng') }}">eng</a></p>
         </div>
         </div>
         <div class="icon-flex">
@@ -70,7 +70,7 @@
                     <button class="carousel-prev-btn"><</button>
                     <button class="carousel-next-btn">></button>
                         <div class="carousel-pagination"></div>
-                        <div class="button-link-partners" onclick="location.href='/partner';">
+                        <div class="button-link-partners" onclick="location.href='{{ path('partenaire') }}';">
                                 Voir nos partenaires
                         </div>  
             </div>
