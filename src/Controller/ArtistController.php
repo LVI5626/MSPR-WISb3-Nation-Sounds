@@ -31,7 +31,7 @@ class ArtistController extends AbstractController
     public function index(ArtistRepository $artistRepository, PartnerRepository $partnerRepository, AlertRepository $alertRepository): Response
     {
         return $this->render('artist/index.html.twig', [
-            'artists' => $artistRepository->findAll(),
+            'artists' => $artistRepository->findBy([],['name'=>'ASC']),
             'partners' => $partnerRepository->findAll(),
             'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
         ]);
@@ -47,7 +47,7 @@ class ArtistController extends AbstractController
 public function indexeng(ArtistRepository $artistRepository, PartnerRepository $partnerRepository, AlertRepository $alertRepository): Response
 {
     return $this->render('artist/eng/index.html.twig', [
-        'artists' => $artistRepository->findAll(),
+        'artists' => $artistRepository->findBy([],['name'=>'ASC']),
         'partners' => $partnerRepository->findAll(),
         'news' => $alertRepository->findBy([],['id'=>'DESC'],[1]),
     ]);

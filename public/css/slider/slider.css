@@ -66,6 +66,7 @@
     cursor: pointer;
     font-family: "Hero";
     text-transform: uppercase;
+    color: #fff;
 }
 
 .slider-controls {

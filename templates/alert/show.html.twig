@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Alert{% endblock %}
+{% block title %}{{ alert.titre }} - Nation Sounds{% endblock %}
 
 {% block body %}
 
@@ -16,10 +16,4 @@
                 <img src="{{ alert.photo2 }}"/>
     </div>
     </div>
-
-    <a href="{{ path('alert_index') }}">back to list</a>
-
-    <a href="{{ path('alert_edit', {'titre': alert.titre}) }}">edit</a>
-
-    {{ include('alert/_delete_form.html.twig') }}
 {% endblock %}
