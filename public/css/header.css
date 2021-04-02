@@ -436,17 +436,49 @@ footer img{
   transition: .7s;
 }
 
+
+
+
+@media (max-width:850px){
+  .footer-right {
+    width: 30%;
+}
+}
+
+@media (max-width: 750px){
+.footer-right {
+    width: 40%;
+}
+}
+
+
 @media (max-width:500px){
   .footer-right {
     width: 50%;
     justify-content: space-between;
     text-align: right;
 }
+
+
 footer img {
   width: 25px;
 }
 
 .language{
     margin-left: 73%;
+}
+}
+
+@media (max-width:450px){
+  .footer-right {
+    width: 60%;
+    justify-content: space-between;
+    text-align: right;
+}
+footer img {
+  width: 20px;
+}
+.footer-left ul {
+  font-size: 12px;
 }
 }
