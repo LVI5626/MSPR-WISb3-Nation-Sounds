@@ -49,12 +49,6 @@ artist_show:
     controller: App\Controller\ArtistController::show
 
 
-#artist_new:
-#    path:     fr/artistes/new
-#    controller: App\Controller\ArtistController::new
-
-
-
 scene_index:
     path:     fr/scenes
     controller: App\Controller\SceneController::index
@@ -110,9 +104,6 @@ partner_index:
 partenaireeng:
     path:     eng/partners
     controller: App\Controller\PartnerController::indexeng
-
-
-
 
 
 

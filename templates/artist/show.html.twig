@@ -3,7 +3,8 @@
 {% block title %}{{ artist.name }} - Nation Sounds{% endblock %}
 
 {% block body %}
-        <div id="background-artist-show" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(2, 2, 9, 0.5), rgba(2, 2, 9, 0.5)) ,url({{ artist.photo2 }});">
+        <div id="background-artist-show" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(2, 2, 9, 0.5), rgba(2, 2, 9, 0.5)) 
+        ,url({{ artist.photo2 }});">
                         <h1>{{ artist.name }}</h1>
         </div>
 
@@ -14,8 +15,6 @@
 
 
                 <div class="artist-show-text">
-
-
                                 <p>Genre : {{ artist.genre }}</p>
 
                                 <p>Date : {{ artist.date }}</p>
@@ -24,10 +23,10 @@
                                 <p>Scène : {{ artist.scene }}</p>
                                 <p>Description :</p>
                                 <p>{{ artist.description }}</p>
-                                <!--  ? artist.hour|date('H:i:s') : '' -->
-
                 </div>
         </div>
+
+
 
 <style>
 .artist-show-text{
